@@ -1,0 +1,53 @@
+using ECA.CBF.Demo.Api;
+using ECA.CBF.Demo.Repository.Db;
+using ECA.CBF.Demo.Repository.Interface;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddMvc(config =>
+{
+    config.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
+}).AddXmlSerializerFormatters();
+
+builder.Services.AddApiVersioning(option =>
+{
+    option.DefaultApiVersion = new ApiVersion(1, 0);
+    option.AssumeDefaultVersionWhenUnspecified = true;
+    option.ReportApiVersions = true;
+});
+
+#region Dependencies Injection
+
+builder.Services.AddScoped<ITeamDbRepository, TeamBdRepository>();
+
+#endregion Dependencies Injection
+
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

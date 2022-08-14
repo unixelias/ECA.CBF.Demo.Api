@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECA.CBF.Demo.Process.Interface\ECA.CBF.Demo.Process.Interface.csproj" />
+    <ProjectReference Include="..\ECA.CBF.Demo.Repository\ECA.CBF.Demo.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
