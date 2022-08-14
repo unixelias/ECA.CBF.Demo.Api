@@ -1,15 +1,16 @@
 ﻿using ECA.CBF.Demo.Entities;
 using ECA.CBF.Demo.Process.Interface;
 using ECA.CBF.Demo.Repository.Db;
+using ECA.CBF.Demo.Repository.Interface;
 
 namespace ECA.CBF.Demo.Process
 {
     public class TeamProcess : ITeamProcess
     {
-        private readonly TeamBdRepository _teamRepository;
+        private readonly ITeamDbRepository _teamRepository;
 
 
-        public TeamProcess(TeamBdRepository teamRepository)
+        public TeamProcess(ITeamDbRepository teamRepository)
         {
             _teamRepository = teamRepository;
         }

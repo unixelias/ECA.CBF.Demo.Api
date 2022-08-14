@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ECA.CBF.Demo.Api.Controllers
+namespace ECA.CBF.Demo.Api.Controllers.v1
 {
+    [ApiVersion("1.0")]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

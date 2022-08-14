@@ -1,4 +1,6 @@
 using ECA.CBF.Demo.Api;
+using ECA.CBF.Demo.Process;
+using ECA.CBF.Demo.Process.Interface;
 using ECA.CBF.Demo.Repository.Db;
 using ECA.CBF.Demo.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +31,7 @@ builder.Services.AddApiVersioning(option =>
 
 #region Dependencies Injection
 
+builder.Services.AddScoped<ITeamProcess, TeamProcess>();
 builder.Services.AddScoped<ITeamDbRepository, TeamBdRepository>();
 
 #endregion Dependencies Injection

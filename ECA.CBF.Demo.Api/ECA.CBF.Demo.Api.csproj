@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ECA.CBF.Demo.Process\ECA.CBF.Demo.Process.csproj" />
     <ProjectReference Include="..\ECA.CBF.Demo.Repository.Interface\ECA.CBF.Demo.Repository.Interface.csproj" />
     <ProjectReference Include="..\ECA.CBF.Demo.Repository\ECA.CBF.Demo.Repository.csproj" />
   </ItemGroup>
