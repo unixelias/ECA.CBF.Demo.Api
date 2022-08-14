@@ -55,4 +55,17 @@ public abstract class DbBaseRepositoryAsync
             throw new InternalErrorException(ex.Message, ex);
         }
     }
+
+    protected async Task<T> ExecuteAndReturnAsync<T>(string sql, object param, int? commandTimeout = null)
+    {
+        using var conexao = new SqlConnection(_connectionString);
+        try
+        {
+            return await conexao.ExecuteScalarAsync<T>(sql, param, commandTimeout: commandTimeout);
+        }
+        catch (Exception ex)
+        {
+            throw new InternalErrorException(ex.Message);
+        }
+    }
 }

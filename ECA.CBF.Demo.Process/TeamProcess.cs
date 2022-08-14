@@ -2,6 +2,7 @@
 using ECA.CBF.Demo.Process.Interface;
 using ECA.CBF.Demo.Repository.Db;
 using ECA.CBF.Demo.Repository.Interface;
+using ECA.CBF.Demo.Util;
 
 namespace ECA.CBF.Demo.Process
 {
@@ -15,11 +16,26 @@ namespace ECA.CBF.Demo.Process
             _teamRepository = teamRepository;
         }
 
-
         public async Task<IEnumerable<TeamEntity>> ListTeamsAsync()
         {
-            var result = await _teamRepository.ListTeamsAsync();
+            List<TeamEntity> result = new();
+            result.AddNonNullOrEmptyRange(await _teamRepository.ListTeamsAsync());
             return result;
+        }
+        public async Task<TeamEntity> GetTeamAsync(int teamId)
+        {            
+            return await _teamRepository.GetTeamAsync(teamId);
+        }
+
+
+        public async Task<int> InsertTeamAsync(TeamEntity team)
+        {
+            return await _teamRepository.InsertTeamAsync(team);
+        }
+
+        public async Task UpdateTeamAsync(TeamEntity team)
+        {
+            await _teamRepository.UpdateTeamAsync(team);
         }
     }
 }
