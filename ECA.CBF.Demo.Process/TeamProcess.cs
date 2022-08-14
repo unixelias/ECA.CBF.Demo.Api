@@ -37,5 +37,10 @@ namespace ECA.CBF.Demo.Process
         {
             await _teamRepository.UpdateTeamAsync(team);
         }
+
+        public async Task DeleteTeamAsync(int teamId)
+        {
+            await _teamRepository.DeleteTeamAsync(teamId);
+        }
     }
 }

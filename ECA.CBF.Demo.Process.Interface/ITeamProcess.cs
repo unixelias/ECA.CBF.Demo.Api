@@ -13,5 +13,7 @@ namespace ECA.CBF.Demo.Process.Interface
         Task<int> InsertTeamAsync(TeamEntity team);
 
         Task UpdateTeamAsync(TeamEntity team);
+
+        Task DeleteTeamAsync(int teamId);
     }
 }

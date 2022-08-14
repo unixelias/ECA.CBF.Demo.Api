@@ -13,5 +13,7 @@ namespace ECA.CBF.Demo.Repository.Interface
         Task<int> InsertTeamAsync(TeamEntity team);
 
         Task UpdateTeamAsync(TeamEntity team);
+
+        Task DeleteTeamAsync(int teamId);
     }
 }

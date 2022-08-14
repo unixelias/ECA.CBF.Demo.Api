@@ -12,24 +12,24 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class TeamController : BaseController
+    public class PlayerController : BaseController
     {
-        private readonly ITeamProcess _teamProcess;
+        private readonly IPlayerProcess _playerProcess;
 
-        public TeamController(ITeamProcess teamProcess, ILogger<TeamController> logger) : base(logger)
+        public PlayerController(IPlayerProcess playerProcess, ILogger<TeamController> logger) : base(logger)
         {
-            _teamProcess = teamProcess;
+            _playerProcess = playerProcess;
         }
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<PlayerEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListAllTeams()
         {
             try
             {
-                var result = await _teamProcess.ListTeamsAsync();
+                var result = await _playerProcess.ListPlayerAsync();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,13 +42,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(TeamEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PlayerEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetTeam([FromRoute] int id)
         {
             try
             {
-                var result = await _teamProcess.GetTeamAsync(id);
+                var result = await _playerProcess.GetPlayerAsync(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,13 +60,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<PlayerEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> InsertTeam([FromBody] TeamEntity team)
+        public async Task<IActionResult> InsertTeam([FromBody] PlayerEntity team)
         {
             try
             {
-                var result = await _teamProcess.InsertTeamAsync(team);
+                var result = await _playerProcess.InsertPlayerAsync(team);
                 return Created(GetRoute(), result);
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateTeam([FromBody] TeamEntity team)
+        public async Task<IActionResult> UpdateTeam([FromBody] PlayerEntity team)
         {
             try
             {
-                await _teamProcess.UpdateTeamAsync(team);
+                await _playerProcess.UpdatePlayerAsync(team);
                 return NoContent();
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         {
             try
             {
-                await _teamProcess.DeleteTeamAsync(id);
+                await _playerProcess.DeletePlayerAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

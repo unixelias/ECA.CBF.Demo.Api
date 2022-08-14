@@ -45,6 +45,14 @@ public class TeamBdRepository : DbBaseRepositoryAsync, ITeamDbRepository
 
         await ExecuteAsync(ScriptsSql.UPDATE_TEAM, paramList);
     }
+    
+    public async Task DeleteTeamAsync(int teamId)
+    {
+        
+        var paramList = new DynamicParameters();
+        paramList.Add("@team_id", teamId, DbType.Int32);
+        await ExecuteAsync(ScriptsSql.DELETE_TEAM, paramList);
+    }
 
     private static class ScriptsSql
     {
@@ -79,5 +87,8 @@ public class TeamBdRepository : DbBaseRepositoryAsync, ITeamDbRepository
                   ,[team_short_name] = @team_short_name
                   ,[team_city] = @team_city
              WHERE [team_id] = @team_id";
+        
+        public static readonly string DELETE_TEAM = @"
+            DELETE FROM [dbo].[team] WHERE [team_id] = @team_id";
     }
 }
