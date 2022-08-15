@@ -15,5 +15,8 @@ namespace ECA.CBF.Demo.Entities
 
         [JsonPropertyName("country")]
         public string Country { get; set; }
+
+        [JsonPropertyName("team")]
+        public string Team { get; set; }
     }
 }

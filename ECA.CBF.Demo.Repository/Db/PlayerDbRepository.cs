@@ -57,14 +57,21 @@ public class PlayerDbRepository : DbBaseRepositoryAsync, IPlayerDbRepository
     private static class ScriptsSql
     {
         public static readonly string LIST_ALL_PLAYERS = @"
-                SELECT [player_id] as Id
-                  ,[player_name] as Name
-                  ,[player_dt_birth] as BirthDate
-                  ,[player_country] as Country
-              FROM [dbo].[player]";
+                SELECT [p].[player_id] as Id
+                    ,[p].[player_name] as Name
+                    ,[p].[player_dt_birth] as BirthDate
+                    ,[p].[player_country] as Country
+	                ,[t_in].[team_name] as Team
+                FROM [dbo].[player] [p]
+                OUTER APPLY (
+		                SELECT TOP 1 * FROM [dbo].[transfer]
+		                WHERE [transfer_player_id] = [p].[player_id]
+		                ORDER BY [transfer_date_time] DESC
+	                ) [t] 
+                LEFT JOIN [dbo].[team] [t_in] ON t.transfer_team_in_id = t_in.team_id";
 
         public static readonly string GET_PLAYER = LIST_ALL_PLAYERS + @"
-                WHERE [player_id]= @player_id";
+                WHERE [player_id] = @player_id";
 
         public static readonly string INSERT_PLAYER = @"
             INSERT INTO [dbo].[player]
