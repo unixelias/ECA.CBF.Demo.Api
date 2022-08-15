@@ -8,12 +8,12 @@ namespace ECA.CBF.Demo.Process.Interface
     {
         Task<IEnumerable<TournmentEntity>> ListAsync();
 
-        Task<TournmentEntity> GetAsync(int transferId);
+        Task<TournmentEntity> GetAsync(int id);
 
-        Task<int> InsertAsync(TournmentEntity transfer);
+        Task<int> InsertAsync(TournmentEntity entity);
 
-        Task UpdateAsync(TournmentEntity transfer);
+        Task UpdateAsync(TournmentEntity entity);
 
-        Task DeleteAsync(int transferId);
+        Task DeleteAsync(int id);
     }
 }

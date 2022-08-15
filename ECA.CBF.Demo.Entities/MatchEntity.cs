@@ -15,16 +15,16 @@ namespace ECA.CBF.Demo.Entities
         public DateTime DateProvided { get; set; }
 
         [JsonPropertyName("match-date-start")]
-        public DateTime DateStart { get; set; }
+        public DateTime? DateStart { get; set; }
 
         [JsonPropertyName("match-date-start-break")]
-        public DateTime DateStartBreak { get; set; }
+        public DateTime? DateStartBreak { get; set; }
 
         [JsonPropertyName("match-date-end-break")]
-        public DateTime DateStopBreak { get; set; }
+        public DateTime? DateStopBreak { get; set; }
 
         [JsonPropertyName("match-date-end")]
-        public DateTime DateEnd { get; set; }
+        public DateTime? DateEnd { get; set; }
 
         [JsonPropertyName("match-tournment")]
         public string Tournment { get; set; }
@@ -46,14 +46,14 @@ namespace ECA.CBF.Demo.Entities
 
         [JsonPropertyName("match-team-guest-id")]
         public int TeamGuestId { get; set; }
-        
+
         [JsonPropertyName("match-team-guest-goals")]
         public int TeamGuestGoals { get; set; }
 
         [JsonPropertyName("match-referee-name")]
-        public int RefereeName { get; set; }
+        public string RefereeName { get; set; }
 
         [JsonPropertyName("match-referee-id")]
-        public int TeamId { get; set; }
+        public int RefereeId { get; set; }
     }
 }
