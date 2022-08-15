@@ -34,9 +34,12 @@ builder.Services.AddApiVersioning(option =>
 builder.Services.AddScoped<ITeamProcess, TeamProcess>();
 builder.Services.AddScoped<ITransferProcess, TransferProcess>();
 builder.Services.AddScoped<IPlayerProcess, PlayerProcess>();
+builder.Services.AddScoped<ITournmentProcess, TournmentProcess>();
+
 builder.Services.AddScoped<ITeamDbRepository, TeamBdRepository>();
 builder.Services.AddScoped<IPlayerDbRepository, PlayerDbRepository>();
 builder.Services.AddScoped<ITransferDbRepository, TransferDbRepository>();
+builder.Services.AddScoped<ITournmentDbRepository, TournmentDbRepository>();
 
 #endregion Dependencies Injection
 
