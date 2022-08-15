@@ -12,24 +12,24 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class TransferController : BaseController
+    public class TeamsController : BaseController
     {
-        private readonly ITransferProcess _transferProcess;
+        private readonly ITeamProcess _teamProcess;
 
-        public TransferController(ITransferProcess transferProcess, ILogger<TeamController> logger) : base(logger)
+        public TeamsController(ITeamProcess teamProcess, ILogger<TeamsController> logger) : base(logger)
         {
-            _transferProcess = transferProcess;
+            _teamProcess = teamProcess;
         }
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TransferEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ListAll()
+        public async Task<IActionResult> ListAllTeams()
         {
             try
             {
-                var result = await _transferProcess.ListAsync();
+                var result = await _teamProcess.ListTeamsAsync();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,13 +42,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(TransferEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(TeamEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public async Task<IActionResult> GetTeam([FromRoute] int id)
         {
             try
             {
-                var result = await _transferProcess.GetAsync(id);
+                var result = await _teamProcess.GetTeamAsync(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,13 +60,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TransferEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Insert([FromBody] TransferEntity transfer)
+        public async Task<IActionResult> InsertTeam([FromBody] TeamEntity team)
         {
             try
             {
-                var result = await _transferProcess.InsertAsync(transfer);
+                var result = await _teamProcess.InsertTeamAsync(team);
                 return Created(GetRoute(), result);
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Update([FromBody] TransferEntity transfer)
+        public async Task<IActionResult> UpdateTeam([FromBody] TeamEntity team)
         {
             try
             {
-                await _transferProcess.UpdateAsync(transfer);
+                await _teamProcess.UpdateTeamAsync(team);
                 return NoContent();
             }
             catch (Exception ex)
@@ -98,11 +98,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromQuery] int id)
+        public async Task<IActionResult> DeleteTeam([FromQuery] int id)
         {
             try
             {
-                await _transferProcess.DeleteAsync(id);
+                await _teamProcess.DeleteTeamAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

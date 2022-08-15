@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using ECA.CBF.Demo.Entities;
+using ECA.CBF.Demo.Entities.Exceptions;
 using ECA.CBF.Demo.Repository.Interface;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
@@ -13,7 +15,61 @@ public class MatchDbRepository : DbBaseRepositoryAsync, IMatchDbRepository
     {
         return await ListAsync<MatchEntity>(ScriptsSql.LIST_ALL);
     }
-    
+
+    public async Task<DateTime?> GetStartAsync(int tournmentId, int matchId)
+    {
+        var paramList = new DynamicParameters();
+        paramList.Add("@tournament_id", tournmentId, DbType.Int32);
+        paramList.Add("@match_id", matchId, DbType.Int32);
+        
+        var match = await GetAsync<MatchEntity>(ScriptsSql.GET_WITH_TORUNMENT, paramList);
+
+        if (match is null)
+        {
+            throw new ResourceNotFoundException("Match or Tournment not found!");
+        }
+
+        return match?.DateStart;
+    }
+
+    public async Task<int> SetStartAsync(int tournmentId, int matchId, DateTime? dateStart)
+    {
+        var paramList = new DynamicParameters();
+        paramList.Add("@tournament_id", tournmentId, DbType.Int32);
+        paramList.Add("@match_id", matchId, DbType.Int32);
+        paramList.Add("@match_dt_start", dateStart, DbType.DateTime);
+
+        return await ExecuteAsync(ScriptsSql.UPDATE_START_DATE, paramList);
+    }
+    public async Task<int> SetEndAsync(int tournmentId, int matchId, DateTime? dateEnd)
+    {
+        var paramList = new DynamicParameters();
+        paramList.Add("@tournament_id", tournmentId, DbType.Int32);
+        paramList.Add("@match_id", matchId, DbType.Int32);
+        paramList.Add("@match_dt_end", dateEnd, DbType.DateTime);
+
+        return await ExecuteAsync(ScriptsSql.UPDATE_END_DATE, paramList);
+    }
+    public async Task<int> SetStartBreakAsync(int tournmentId, int matchId, DateTime? dateStartBreak)
+    {
+        var paramList = new DynamicParameters();
+        paramList.Add("@tournament_id", tournmentId, DbType.Int32);
+        paramList.Add("@match_id", matchId, DbType.Int32);
+        paramList.Add("@match_dt_start_break", dateStartBreak, DbType.DateTime);
+
+        return await ExecuteAsync(ScriptsSql.UPDATE_START_BRAKE_DATE, paramList);
+    }
+
+    public async Task<int> SetEndBreakAsync(int tournmentId, int matchId, DateTime? dateEndBreak)
+    {
+        var paramList = new DynamicParameters();
+        paramList.Add("@tournament_id", tournmentId, DbType.Int32);
+        paramList.Add("@match_id", matchId, DbType.Int32);
+        paramList.Add("@match_dt_end_break", dateEndBreak, DbType.DateTime);
+
+        return await ExecuteAsync(ScriptsSql.UPDATE_END_BRAKE_DATE, paramList);
+    }
+
     public async Task<MatchEntity> GetAsync(int id)
     {
         var paramList = new DynamicParameters();
@@ -96,6 +152,9 @@ public class MatchDbRepository : DbBaseRepositoryAsync, IMatchDbRepository
 
         public static readonly string GET = LIST_ALL + @"
                 WHERE [m].[match_id] = @match_id";
+        
+        public static readonly string GET_WITH_TORUNMENT = LIST_ALL + @"
+                WHERE [m].[match_id] = @match_id AND  [m].[match_tournament_id] = @tournament_id";
 
         public static readonly string INSERT = @"
             INSERT INTO [dbo].[match]
@@ -135,6 +194,26 @@ public class MatchDbRepository : DbBaseRepositoryAsync, IMatchDbRepository
                   ,[match_team_guest] = @match_team_guest
                   ,[match_referee] = @match_referee
              WHERE [match_id] = @match_id";
+
+        public static readonly string UPDATE_START_DATE = @"
+            UPDATE [dbo].[match]
+               SET [match_dt_start] = @match_dt_start
+            WHERE [match_id] = @match_id AND  [match_tournament_id] = @tournament_id";
+
+        public static readonly string UPDATE_END_DATE = @"
+            UPDATE [dbo].[match]
+               SET [match_dt_end] = @match_dt_end
+            WHERE [match_id] = @match_id AND  [match_tournament_id] = @tournament_id";
+        
+        public static readonly string UPDATE_START_BRAKE_DATE = @"
+            UPDATE [dbo].[match]
+               SET [match_dt_start_break] = @match_dt_start_break
+            WHERE [match_id] = @match_id AND  [match_tournament_id] = @tournament_id";
+
+        public static readonly string UPDATE_END_BRAKE_DATE = @"
+            UPDATE [dbo].[match]
+               SET [match_dt_end_break] = @match_dt_end_break
+            WHERE [match_id] = @match_id AND  [match_tournament_id] = @tournament_id";
 
         public static readonly string DELETE = @"
             DELETE FROM [dbo].[match] WHERE [match_id] = @match_id";

@@ -12,24 +12,24 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class TeamController : BaseController
+    public class MatchesController : BaseController
     {
-        private readonly ITeamProcess _teamProcess;
+        private readonly IMatchProcess _matchProcess;
 
-        public TeamController(ITeamProcess teamProcess, ILogger<TeamController> logger) : base(logger)
+        public MatchesController(IMatchProcess matchProcess, ILogger<TeamsController> logger) : base(logger)
         {
-            _teamProcess = teamProcess;
+            _matchProcess = matchProcess;
         }
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ListAllTeams()
+        public async Task<IActionResult> ListAll()
         {
             try
             {
-                var result = await _teamProcess.ListTeamsAsync();
+                var result = await _matchProcess.ListAsync();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,13 +42,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(TeamEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(MatchEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetTeam([FromRoute] int id)
+        public async Task<IActionResult> Get([FromRoute] int id)
         {
             try
             {
-                var result = await _teamProcess.GetTeamAsync(id);
+                var result = await _matchProcess.GetAsync(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,13 +60,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TeamEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> InsertTeam([FromBody] TeamEntity team)
+        public async Task<IActionResult> Insert([FromBody] MatchEntity entity)
         {
             try
             {
-                var result = await _teamProcess.InsertTeamAsync(team);
+                var result = await _matchProcess.InsertAsync(entity);
                 return Created(GetRoute(), result);
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateTeam([FromBody] TeamEntity team)
+        public async Task<IActionResult> Update([FromBody] MatchEntity entity)
         {
             try
             {
-                await _teamProcess.UpdateTeamAsync(team);
+                await _matchProcess.UpdateAsync(entity);
                 return NoContent();
             }
             catch (Exception ex)
@@ -98,11 +98,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteTeam([FromQuery] int id)
+        public async Task<IActionResult> Delete([FromQuery] int id)
         {
             try
             {
-                await _teamProcess.DeleteTeamAsync(id);
+                await _matchProcess.DeleteAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

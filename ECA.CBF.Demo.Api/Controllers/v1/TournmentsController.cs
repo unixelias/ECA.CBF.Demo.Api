@@ -12,24 +12,24 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class MatchController : BaseController
+    public class TournmentsController : BaseController
     {
-        private readonly IMatchProcess _matchProcess;
+        private readonly ITournmentProcess _tournmentProcess;
 
-        public MatchController(IMatchProcess matchProcess, ILogger<TeamController> logger) : base(logger)
+        public TournmentsController(ITournmentProcess tournmentProcess, ILogger<TeamsController> logger) : base(logger)
         {
-            _matchProcess = matchProcess;
+            _tournmentProcess = tournmentProcess;
         }
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<TournmentEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListAll()
         {
             try
             {
-                var result = await _matchProcess.ListAsync();
+                var result = await _tournmentProcess.ListAsync();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,13 +42,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(MatchEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(TournmentEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             try
             {
-                var result = await _matchProcess.GetAsync(id);
+                var result = await _tournmentProcess.GetAsync(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,13 +60,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<TournmentEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Insert([FromBody] MatchEntity entity)
+        public async Task<IActionResult> Insert([FromBody] TournmentEntity entity)
         {
             try
             {
-                var result = await _matchProcess.InsertAsync(entity);
+                var result = await _tournmentProcess.InsertAsync(entity);
                 return Created(GetRoute(), result);
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Update([FromBody] MatchEntity entity)
+        public async Task<IActionResult> Update([FromBody] TournmentEntity entity)
         {
             try
             {
-                await _matchProcess.UpdateAsync(entity);
+                await _tournmentProcess.UpdateAsync(entity);
                 return NoContent();
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         {
             try
             {
-                await _matchProcess.DeleteAsync(id);
+                await _tournmentProcess.DeleteAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

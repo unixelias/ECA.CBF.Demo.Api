@@ -43,12 +43,12 @@ public abstract class DbBaseRepositoryAsync
         }
     }
 
-    protected async Task ExecuteAsync(string sql, object param, int? commandTimeout = null)
+    protected async Task<int> ExecuteAsync(string sql, object param, int? commandTimeout = null)
     {
         using var conexao = new SqlConnection(_connectionString);
         try
         {
-            await conexao.ExecuteAsync(sql, param, commandTimeout: commandTimeout);
+            return await conexao.ExecuteAsync(sql, param, commandTimeout: commandTimeout);
         }
         catch (Exception ex)
         {

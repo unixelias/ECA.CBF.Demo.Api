@@ -12,24 +12,24 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class TournmentController : BaseController
+    public class PlayersController : BaseController
     {
-        private readonly ITournmentProcess _tournmentProcess;
+        private readonly IPlayerProcess _playerProcess;
 
-        public TournmentController(ITournmentProcess tournmentProcess, ILogger<TeamController> logger) : base(logger)
+        public PlayersController(IPlayerProcess playerProcess, ILogger<TeamsController> logger) : base(logger)
         {
-            _tournmentProcess = tournmentProcess;
+            _playerProcess = playerProcess;
         }
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TournmentEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<PlayerEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ListAll()
+        public async Task<IActionResult> ListAllTeams()
         {
             try
             {
-                var result = await _tournmentProcess.ListAsync();
+                var result = await _playerProcess.ListPlayerAsync();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,13 +42,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(TournmentEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(PlayerEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public async Task<IActionResult> GetTeam([FromRoute] int id)
         {
             try
             {
-                var result = await _tournmentProcess.GetAsync(id);
+                var result = await _playerProcess.GetPlayerAsync(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,13 +60,13 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<TournmentEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(IEnumerable<PlayerEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Insert([FromBody] TournmentEntity entity)
+        public async Task<IActionResult> InsertTeam([FromBody] PlayerEntity team)
         {
             try
             {
-                var result = await _tournmentProcess.InsertAsync(entity);
+                var result = await _playerProcess.InsertPlayerAsync(team);
                 return Created(GetRoute(), result);
             }
             catch (Exception ex)
@@ -80,11 +80,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Update([FromBody] TournmentEntity entity)
+        public async Task<IActionResult> UpdateTeam([FromBody] PlayerEntity team)
         {
             try
             {
-                await _tournmentProcess.UpdateAsync(entity);
+                await _playerProcess.UpdatePlayerAsync(team);
                 return NoContent();
             }
             catch (Exception ex)
@@ -98,11 +98,11 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromQuery] int id)
+        public async Task<IActionResult> DeleteTeam([FromQuery] int id)
         {
             try
             {
-                await _tournmentProcess.DeleteAsync(id);
+                await _playerProcess.DeletePlayerAsync(id);
                 return NoContent();
             }
             catch (Exception ex)

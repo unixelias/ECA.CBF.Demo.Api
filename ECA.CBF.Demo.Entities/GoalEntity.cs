@@ -7,17 +7,23 @@ namespace ECA.CBF.Demo.Entities
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
+
         [JsonPropertyName("goal-match-id")]
         public int MatchId { get; set; }
 
+        [JsonPropertyName("goal-player")]
+        public string Player { get; set; }
+
         [JsonPropertyName("goal-player-id")]
         public int PlayerId { get; set; }
+
+        [JsonPropertyName("goal-team")]
+        public string Team { get; set; }
 
         [JsonPropertyName("goal-team-id")]
         public int TeamId { get; set; }
 
         [JsonPropertyName("goal-date-time")]
         public DateTime Date { get; set; }
-
     }
 }
