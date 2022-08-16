@@ -32,5 +32,13 @@ namespace ECA.CBF.Demo.Process.Interface
         Task<int> UpdateCardAsync(CardEntity entity);
 
         Task<int> DeleteCardAsync(int id);
+
+        Task<IEnumerable<ReplacementEntity>> ListReplacementAsync(int id);
+
+        Task<int> InsertReplacementAsync(ReplacementEntity entity);
+
+        Task<int> UpdateReplacementAsync(ReplacementEntity entity);
+
+        Task<int> DeleteReplacementAsync(int id);
     }
 }

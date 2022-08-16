@@ -45,6 +45,7 @@ builder.Services.AddScoped<ITournmentDbRepository, TournmentDbRepository>();
 builder.Services.AddScoped<IMatchDbRepository, MatchDbRepository>();
 builder.Services.AddScoped<IGoalDbRepository, GoalDbRepository>();
 builder.Services.AddScoped<ICardDbRepository, CardDbRepository>();
+builder.Services.AddScoped<IReplacementDbRepository, ReplacementDbRepository>();
 
 #endregion Dependencies Injection
 

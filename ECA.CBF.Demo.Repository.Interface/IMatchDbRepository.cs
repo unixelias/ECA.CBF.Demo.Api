@@ -21,9 +21,9 @@ namespace ECA.CBF.Demo.Repository.Interface
 
         Task<MatchEntity> GetAsync(int id);
 
-        Task<int> InsertAsync(MatchEntity entity);
+        Task<int> InsertAsync(MatchBaseEntity entity);
 
-        Task UpdateAsync(MatchEntity entity);
+        Task UpdateAsync(MatchBaseEntity entity);
 
         Task DeleteAsync(int id);
     }

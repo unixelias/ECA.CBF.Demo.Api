@@ -1,4 +1,5 @@
 ﻿using ECA.CBF.Demo.Entities;
+using ECA.CBF.Demo.Entities.Exceptions;
 using ECA.CBF.Demo.Process.Interface;
 using ECA.CBF.Demo.Repository.Interface;
 using ECA.CBF.Demo.Util;
@@ -8,30 +9,60 @@ namespace ECA.CBF.Demo.Process
     public class MatchProcess : IMatchProcess
     {
         private readonly IMatchDbRepository _matchRepository;
+        private readonly IGoalDbRepository _goalRepository;
+        private readonly ICardDbRepository _cardRepository;
+        private readonly IReplacementDbRepository _replacementRepository;
 
-        public MatchProcess(IMatchDbRepository matchRepository)
+
+        public MatchProcess(IMatchDbRepository matchRepository, IGoalDbRepository goalRepository, ICardDbRepository cardRepository, IReplacementDbRepository replacementRepository)
         {
             _matchRepository = matchRepository;
+            _goalRepository = goalRepository;
+            _cardRepository = cardRepository;
+            _replacementRepository = replacementRepository;
         }
 
-        public async Task<IEnumerable<MatchEntity>> ListAsync()
+        public async Task<IEnumerable<MatchExtendedEntity>> ListAsync()
         {
-            List<MatchEntity> result = new();
-            result.AddNonNullOrEmptyRange(await _matchRepository.ListAsync());
-            return result;
+            List<MatchEntity> matchList = new();
+            List<MatchExtendedEntity> matchExtendedList = new();
+
+            matchList.AddNonNullOrEmptyRange(await _matchRepository.ListAsync());
+            if (matchList.Any())
+            {
+                foreach (var match in matchList)
+                {
+                    var goals = await _goalRepository.ListAsync(match.Id);
+                    var cards = await _cardRepository.ListAsync(match.Id);
+                    var replacements = await _replacementRepository.ListAsync(match.Id);
+                    matchExtendedList.Add(match.GetMatchExtended(goals, cards, replacements));
+                }
+            }            
+            return matchExtendedList;
         }
 
-        public async Task<MatchEntity> GetAsync(int id)
+        public async Task<MatchExtendedEntity> GetAsync(int id)
         {
-            return await _matchRepository.GetAsync(id);
+            var match = await _matchRepository.GetAsync(id);
+
+            if (match == null)
+            {
+                throw new ResourceNotFoundException("Match does not exists");
+            }
+
+            var goals = await _goalRepository.ListAsync(match.Id);
+            var cards = await _cardRepository.ListAsync(match.Id);
+            var replacements = await _replacementRepository.ListAsync(match.Id);
+
+            return match.GetMatchExtended(goals, cards, replacements);
         }
 
-        public async Task<int> InsertAsync(MatchEntity entity)
+        public async Task<int> InsertAsync(MatchBaseEntity entity)
         {
             return await _matchRepository.InsertAsync(entity);
         }
 
-        public async Task UpdateAsync(MatchEntity entity)
+        public async Task UpdateAsync(MatchBaseEntity entity)
         {
             await _matchRepository.UpdateAsync(entity);
         }

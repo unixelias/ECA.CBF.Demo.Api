@@ -73,11 +73,11 @@ public class MatchDbRepository : DbBaseRepositoryAsync, IMatchDbRepository
     public async Task<MatchEntity> GetAsync(int id)
     {
         var paramList = new DynamicParameters();
-        paramList.Add("@tournament_id", id, DbType.Int32);
+        paramList.Add("@match_id", id, DbType.Int32);
         return await GetAsync<MatchEntity>(ScriptsSql.GET, paramList);
     }
     
-    public async Task<int> InsertAsync(MatchEntity entity)
+    public async Task<int> InsertAsync(MatchBaseEntity entity)
     {
 
         var paramList = new DynamicParameters();
@@ -96,7 +96,7 @@ public class MatchDbRepository : DbBaseRepositoryAsync, IMatchDbRepository
         return await ExecuteAndReturnAsync<int>(ScriptsSql.INSERT, paramList);
     }
 
-    public async Task UpdateAsync(MatchEntity entity)
+    public async Task UpdateAsync(MatchBaseEntity entity)
     {
         
         var paramList = new DynamicParameters();

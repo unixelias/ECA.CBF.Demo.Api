@@ -1,9 +1,9 @@
 using ECA.CBF.Demo.Entities;
+using ECA.CBF.Demo.Entities.Exceptions;
 using ECA.CBF.Demo.Process.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -27,16 +27,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListAllTeams()
         {
-            try
-            {
-                var result = await _teamProcess.ListTeamsAsync();
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await GetListAsync(async () => await _teamProcess.ListTeamsAsync());
         }
 
         [HttpGet]
@@ -46,16 +37,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetTeam([FromRoute] int id)
         {
-            try
-            {
-                var result = await _teamProcess.GetTeamAsync(id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await GetListAsync(async () => await _teamProcess.GetTeamAsync(id));
         }
 
         [HttpPost]
@@ -64,16 +46,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> InsertTeam([FromBody] TeamEntity team)
         {
-            try
-            {
-                var result = await _teamProcess.InsertTeamAsync(team);
-                return Created(GetRoute(), result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PostDataAsync<TeamEntity, int, InternalErrorException>(async () => await _teamProcess.InsertTeamAsync(team), team);
         }
 
         [HttpPut]
@@ -82,16 +55,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateTeam([FromBody] TeamEntity team)
         {
-            try
-            {
-                await _teamProcess.UpdateTeamAsync(team);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PutDataAsync<TeamEntity, InternalErrorException>(async () => await _teamProcess.UpdateTeamAsync(team), team);
         }
 
         [HttpDelete]
@@ -100,16 +64,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteTeam([FromQuery] int id)
         {
-            try
-            {
-                await _teamProcess.DeleteTeamAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PutDataAsync<int, InternalErrorException>(async () => await _teamProcess.DeleteTeamAsync(id), id);
         }
     }
 }

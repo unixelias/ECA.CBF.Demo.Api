@@ -128,6 +128,6 @@ public class BaseController : ControllerBase
     protected IActionResult ResourceNotFound(ResourceNotFoundException e)
     {
         Logger.LogError($"Error on: {GetRoute()}. Resource not found! Menssage: {e.Message} StackTrace: {e.StackTrace}");
-        return StatusCode(StatusCodes.Status404NotFound, e.Message + e.StackTrace);
+        return StatusCode(StatusCodes.Status404NotFound, e.Message);
     }
 }

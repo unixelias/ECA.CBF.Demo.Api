@@ -6,13 +6,13 @@ namespace ECA.CBF.Demo.Process.Interface
 {
     public interface IMatchProcess
     {
-        Task<IEnumerable<MatchEntity>> ListAsync();
+        Task<IEnumerable<MatchExtendedEntity>> ListAsync();
 
-        Task<MatchEntity> GetAsync(int id);
+        Task<MatchExtendedEntity> GetAsync(int id);
 
-        Task<int> InsertAsync(MatchEntity entity);
+        Task<int> InsertAsync(MatchBaseEntity entity);
 
-        Task UpdateAsync(MatchEntity entity);
+        Task UpdateAsync(MatchBaseEntity entity);
 
         Task DeleteAsync(int id);
     }

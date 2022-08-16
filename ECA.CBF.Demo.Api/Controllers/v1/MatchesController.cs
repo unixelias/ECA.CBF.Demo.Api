@@ -1,9 +1,9 @@
 using ECA.CBF.Demo.Entities;
+using ECA.CBF.Demo.Entities.Exceptions;
 using ECA.CBF.Demo.Process.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,75 +23,39 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
 
         [HttpGet]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<MatchExtendedEntity>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ListAll()
         {
-            try
-            {
-                var result = await _matchProcess.ListAsync();
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await GetListAsync(async () => await _matchProcess.ListAsync());
         }
 
         [HttpGet]
         [Route("{id}")]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(MatchEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(MatchExtendedEntity), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
-            try
-            {
-                var result = await _matchProcess.GetAsync(id);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await GetListAsync(async () => await _matchProcess.GetAsync(id));
         }
 
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(typeof(IEnumerable<MatchEntity>), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(int), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Insert([FromBody] MatchEntity entity)
+        public async Task<IActionResult> Insert([FromBody] MatchBaseEntity entity)
         {
-            try
-            {
-                var result = await _matchProcess.InsertAsync(entity);
-                return Created(GetRoute(), result);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PostDataAsync<MatchBaseEntity, int, InternalErrorException>(async () => await _matchProcess.InsertAsync(entity), entity);
         }
 
         [HttpPut]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Update([FromBody] MatchEntity entity)
+        public async Task<IActionResult> Update([FromBody] MatchBaseEntity entity)
         {
-            try
-            {
-                await _matchProcess.UpdateAsync(entity);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PutDataAsync<MatchBaseEntity, InternalErrorException>(async () => await _matchProcess.UpdateAsync(entity), entity);
         }
 
         [HttpDelete]
@@ -100,16 +64,7 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete([FromQuery] int id)
         {
-            try
-            {
-                await _matchProcess.DeleteAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"Erro encontrado: {ex}");
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message + ex.StackTrace);
-            }
+            return await PutDataAsync<int, InternalErrorException>(async () => await _matchProcess.DeleteAsync(id), id);
         }
     }
 }
