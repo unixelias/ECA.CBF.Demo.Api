@@ -32,6 +32,9 @@ ________________
 Foi desenvolvida uma API que possibilita o gerenciamento de pequenas ligas de futebol. É possível cadastrar vários Times e seus Jogadores, bem como as transferências realizadas entre times. Também é possível cadastrar campeonatos e programar a execução de partidas entre times. Para as partidas cadastradas é possível lançar cartões (advertências), gols, substituições, bem como início e fim das partidas e do intervalo. Quando buscamos os dados das partidas todos os dados dos eventos referentes a essas partidas são informados.
 
 
+### Modelo de dados
+![Modelo de dados](./.assets/Modelo_Banco.jpg)
+
 ### Principais Tecnologias
 
 A API está integrada a um serviço de filas que disponibiliza mensagens com os dados de atualização das partidas toda vez que algum evento é registrado ou caso uma partida seja atualizada.
@@ -46,69 +49,47 @@ O .NET 6.0 foi usado para desenvolver a API e uma fila baseada em RabbitMQ rodan
 ### Pré-Requisitos
 
 - [.NET 6.0](https://dotnet.microsoft.com/) instaldo e configurado.
-- Banco de dados rodando e configurado (Script de criação de tabelas disponível nesse repo)
+- Banco de dados rodando e configurado [Script de inicialização do banco de dados](./.assets/init-db.sql)
 - Docker configurado na máquina
 - RabbitMQ rodando e configurado
 
-As configurações de conex
+As configurações necessárias para conectar a API aos serviços de banco de dados e mensageria estão localizadas no arquivo appsettings.Development.json.
 
-### Como instalar
+![Configurações](./.assets/configs_env_dotnet.jpg "Localização das configurações")
 
-Passo a passo de como instalar a aplicação.
 
-- Utilizando o npm
+### Como rodar
+
+Primeiro é necessário clonar esse repositório em seu computador local.
+
+- Clonando repositório
 
   ```sh
-  npm i --save nome-da-aplicação
+  git clone https://github.com/unixelias/ECA.CBF.Demo.Api.git
+  cd ECA.CBF.Demo.Api
   ```
 
-### Como desinstalar
+As configurações de acesso ao RabbitMQ estão setadas para o padrão guest:guest.
 
-Instruções para remover a aplicação.
+- Iniciando RabbitMQ
 
-## Como utilizar
+  ```sh
+  docker run -d --rm --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 -p 5671:5671 rabbitmq:3-management
+  ```
 
-Informações mais detalhadas sobre como e quando utilizar as funcionalidades da aplicação, como fazer configurações personalizadas e demais observações importantes relacionadas a esse contexto.
+ Em seguida, tendo os serviços de banco de dados rodando, bem como os dados de conexão ao servidor RabbitMQ configurados na aplicação, basta usar o dotnet para iniciar a aplicação, conforme segue:
 
-## Build local
+- Utilizando o dotnet
 
-![Modelo de dados](./.assets/Modelo_Banco.jpg "Modelo de dados")
+  ```sh
+  dotnet restore ECA.CBF.Demo.Api.sln
+  dotnet run --project ECA.CBF.Demo.Api/ECA.CBF.Demo.Api.csproj
+  ```
 
+Ao iniciar a aplicação é disponibilizada uma interface baseada em Swagger. Essa interface é baseada em OpenApi 3.0 e pode ser usada para tesar os endpoints disponibilizados, contendo ainda os contratos usados nos endpoints com exemplos.
 
-Instruções sobre como executar a aplicação em um ambiente de desenvolvimento local.
-
-### Pré-Requisitos
-
-Liste, caso existam, as tecnologias que deverão ser instaladas para que o usuário consiga executar a aplicação em seu ambiente de desenvolvimento local. Mostre de forma clara e direta como instalar cada um dos pré requisitos.
-
-### Como executar
-
-Mostre o passo a passo necessário para executar a aplicação.
-
-Exemplo:
-
-1. Gere uma chave de acesso gratuita no site [https://example.com](https://example.com)
-2. Clone o repositório
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Installe as dependências
-   ```sh
-   npm install
-   ```
-4. Insira sua chave de acesso no arquivo `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
-5. Inicialize a aplicação
-   ```sh
-   npm start
-   ```
-
-## Como contribuir
-
-Forneça instruções para que as pessoas saibam como contribuir para o projeto. Você pode colocar um link para um guia de contribuição, por exemplo.
+![Swagger](./.assets/swagger-api.jpg)
 
 ## Licença
 
-Informe a licença de códido utilizada pelo projeto.
+MIT.
