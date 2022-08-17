@@ -37,30 +37,20 @@ Foi desenvolvida uma API que possibilita o gerenciamento de pequenas ligas de fu
 A API está integrada a um serviço de filas que disponibiliza mensagens com os dados de atualização das partidas toda vez que algum evento é registrado ou caso uma partida seja atualizada.
 O .NET 6.0 foi usado para desenvolver a API e uma fila baseada em RabbitMQ rodando em contêiner Docker. SQL Server foi escolhido como banco de dados, para o qual desenvolvemos um modelo relacional.
 
-
 - [.NET 6.0](https://dotnet.microsoft.com/)
 - [RabbitMQ](https://www.rabbitmq.com/)
 - [Docker](https://www.docker.com/)
 - [Visual Studio Community](https://visualstudio.microsoft.com/pt-br/vs/community/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
-## Instalação
-
-Informações sobre como instalar a aplicação do ponto de vista de usuário da mesma. Instruções sobre como executá-la localmente e contribuir para o projeto devem ser citadas nas seções [Build Local](#build-local) e [Como contribuir](como-contribuir).
-
 ### Pré-Requisitos
 
 - [.NET 6.0](https://dotnet.microsoft.com/) instaldo e configurado.
-- Banco de dados rodando e configurado
+- Banco de dados rodando e configurado (Script de criação de tabelas disponível nesse repo)
+- Docker configurado na máquina
+- RabbitMQ rodando e configurado
 
-Liste, caso existam, as tecnologias que deverão ser instaladas para que o usuário consiga utilizar a aplicação. Mostre de forma clara e direta como instalar cada um dos pré requisitos.
-
-Exemplo:
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+As configurações de conex
 
 ### Como instalar
 
@@ -82,6 +72,7 @@ Informações mais detalhadas sobre como e quando utilizar as funcionalidades da
 
 ## Build local
 
+[Modelo de dados](./.assets/Modelo_Banco.jpg)
 Instruções sobre como executar a aplicação em um ambiente de desenvolvimento local.
 
 ### Pré-Requisitos
