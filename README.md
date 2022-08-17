@@ -72,7 +72,9 @@ Informações mais detalhadas sobre como e quando utilizar as funcionalidades da
 
 ## Build local
 
-[Modelo de dados](./.assets/Modelo_Banco.jpg)
+![Modelo de dados](./.assets/Modelo_Banco.jpg "Modelo de dados")
+
+
 Instruções sobre como executar a aplicação em um ambiente de desenvolvimento local.
 
 ### Pré-Requisitos
