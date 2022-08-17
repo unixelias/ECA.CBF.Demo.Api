@@ -15,17 +15,12 @@ ________________
 ## Índice
 
 1. [Sobre a aplicação](#sobre-a-aplicação)
+    - [Modelo de dados](#modelo-dados)
     - [Principais tecnologias](#principais-tecnologias)
-2. [Instalação](#instalação)
     - [Pré Requisitos](#pré-requisitos)
-    - [Como instalar](#como-instalar)
-    - [Como desinstalar](#como-desinstalar)
-3. [Como utilizar](#como-utilizar)
-4. [Build Local](#build-local)
-    - [Pré Requisitos](#pré-requisitos)
-    - [Como executar](#como-executar)
-5. [Como contribuir](#como-contribuir)
-6. [Licença](#licença)
+    - [Como rodar](#como-rodar)
+    - [Rodando com Visual Studio](#como-vs)
+2. [Licença](#licença)
 
 ## Sobre a aplicação
 
@@ -100,4 +95,4 @@ Ao abrir o projeto, você pode
 
 ## Licença
 
-MIT.
+MIT License.
