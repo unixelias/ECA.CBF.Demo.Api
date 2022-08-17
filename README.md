@@ -90,6 +90,14 @@ Ao iniciar a aplicação é disponibilizada uma interface baseada em Swagger. Es
 
 ![Swagger](./.assets/swagger-api.jpg)
 
+### Rodando com Visual Studio
+
+A maneira mais fácil de rodar esse projeto é pelo Visual Studio, que é o SDK do .NET. Basta abrir o arquivo **ECA.CBF.Demo.Api.sln**.
+Ao abrir o projeto, você pode 
+
+![VisualStudio](./.assets/visual-studio.jpg)
+
+
 ## Licença
 
 MIT.
