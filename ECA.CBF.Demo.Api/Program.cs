@@ -1,6 +1,7 @@
 using ECA.CBF.Demo.Api;
 using ECA.CBF.Demo.Process;
 using ECA.CBF.Demo.Process.Interface;
+using ECA.CBF.Demo.Repository;
 using ECA.CBF.Demo.Repository.Db;
 using ECA.CBF.Demo.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IMatchDbRepository, MatchDbRepository>();
 builder.Services.AddScoped<IGoalDbRepository, GoalDbRepository>();
 builder.Services.AddScoped<ICardDbRepository, CardDbRepository>();
 builder.Services.AddScoped<IReplacementDbRepository, ReplacementDbRepository>();
+builder.Services.AddScoped<IRabbitMQRepository, RabbitMQRepository>();
 
 #endregion Dependencies Injection
 

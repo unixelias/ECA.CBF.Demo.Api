@@ -7,8 +7,6 @@ namespace ECA.CBF.Demo.Process.Interface
 {
     public interface IMatchEventsProcess
     {
-        Task<DateTime?> GetStartAsync(int tournmentId, int matchId);
-
         Task SetStartAsync(int tournmentId, int matchId, DateTime? dateStart);
 
         Task SetEndAsync(int tournmentId, int matchId, DateTime? dateEnd);
@@ -19,26 +17,26 @@ namespace ECA.CBF.Demo.Process.Interface
 
         Task<IEnumerable<GoalEntity>> ListGoalsAsync(int id);
 
-        Task<int> InsertGoalsAsync(GoalEntity entity);
+        Task<int> InsertGoalsAsync(int tournmentId, int matchId, GoalEntity entity);
 
-        Task UpdateGoalsAsync(GoalEntity entity);
+        Task UpdateGoalsAsync(int tournmentId, int matchId, GoalEntity entity);
 
-        Task DeleteGoalAsync(int id);
+        Task DeleteGoalAsync(int tournmentId, int matchId, int id);
 
         Task<IEnumerable<CardEntity>> ListCardAsync(int id);
 
-        Task<int> InsertCardAsync(CardEntity entity);
+        Task<int> InsertCardAsync(int tournmentId, int matchId, CardEntity entity);
 
-        Task<int> UpdateCardAsync(CardEntity entity);
+        Task<int> UpdateCardAsync(int tournmentId, int matchId, CardEntity entity);
 
-        Task<int> DeleteCardAsync(int id);
+        Task<int> DeleteCardAsync(int tournmentId, int matchId, int id);
 
         Task<IEnumerable<ReplacementEntity>> ListReplacementAsync(int id);
 
-        Task<int> InsertReplacementAsync(ReplacementEntity entity);
+        Task<int> InsertReplacementAsync(int tournmentId, int matchId, ReplacementEntity entity);
 
-        Task<int> UpdateReplacementAsync(ReplacementEntity entity);
+        Task<int> UpdateReplacementAsync(int tournmentId, int matchId, ReplacementEntity entity);
 
-        Task<int> DeleteReplacementAsync(int id);
+        Task<int> DeleteReplacementAsync(int tournmentId, int matchId, int id);
     }
 }

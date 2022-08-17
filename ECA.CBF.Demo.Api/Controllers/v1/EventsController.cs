@@ -74,9 +74,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(typeof(IEnumerable<GoalEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> InsertGoalAsync([FromBody] GoalEntity entity)
+        public async Task<IActionResult> InsertGoalAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] GoalEntity entity)
         {
-            return await PostDataAsync<GoalEntity, int, InternalErrorException>(async () => await _eventProcess.InsertGoalsAsync(entity), entity);
+            return await PostDataAsync<GoalEntity, int, InternalErrorException>(async () => await _eventProcess.InsertGoalsAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpPut]
@@ -84,9 +84,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateGoalAsync([FromBody] GoalEntity entity)
+        public async Task<IActionResult> UpdateGoalAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] GoalEntity entity)
         {
-            return await PutDataAsync<GoalEntity, InternalErrorException>(async () => await _eventProcess.UpdateGoalsAsync(entity), entity);
+            return await PutDataAsync<GoalEntity, InternalErrorException>(async () => await _eventProcess.UpdateGoalsAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpDelete]
@@ -94,9 +94,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteGoalAsync([FromQuery] int id)
+        public async Task<IActionResult> DeleteGoalAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromQuery] int id)
         {
-            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteGoalAsync(id), id);
+            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteGoalAsync(tournmentId, matchId, id), id);
         }
 
         [HttpGet]
@@ -114,9 +114,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(typeof(IEnumerable<CardEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> InsertCardAsync([FromBody] CardEntity entity)
+        public async Task<IActionResult> InsertCardAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] CardEntity entity)
         {
-            return await PostDataAsync<CardEntity, int, InternalErrorException>(async () => await _eventProcess.InsertCardAsync(entity), entity);
+            return await PostDataAsync<CardEntity, int, InternalErrorException>(async () => await _eventProcess.InsertCardAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpPut]
@@ -124,9 +124,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateCardAsync([FromBody] CardEntity entity)
+        public async Task<IActionResult> UpdateCardAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] CardEntity entity)
         {
-            return await PutDataAsync<CardEntity, InternalErrorException>(async () => await _eventProcess.UpdateCardAsync(entity), entity);
+            return await PutDataAsync<CardEntity, InternalErrorException>(async () => await _eventProcess.UpdateCardAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpDelete]
@@ -134,9 +134,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteCardAsync([FromQuery] int id)
+        public async Task<IActionResult> DeleteCardAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromQuery] int id)
         {
-            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteCardAsync(id), id);
+            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteCardAsync(tournmentId, matchId, id), id);
         }
 
         [HttpGet]
@@ -154,9 +154,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(typeof(IEnumerable<ReplacementEntity>), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> InsertReplacementAsync([FromBody] ReplacementEntity entity)
+        public async Task<IActionResult> InsertReplacementAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] ReplacementEntity entity)
         {
-            return await PostDataAsync<ReplacementEntity, int, InternalErrorException>(async () => await _eventProcess.InsertReplacementAsync(entity), entity);
+            return await PostDataAsync<ReplacementEntity, int, InternalErrorException>(async () => await _eventProcess.InsertReplacementAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpPut]
@@ -164,9 +164,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> UpdateReplacementAsync([FromBody] ReplacementEntity entity)
+        public async Task<IActionResult> UpdateReplacementAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromBody] ReplacementEntity entity)
         {
-            return await PutDataAsync<ReplacementEntity, InternalErrorException>(async () => await _eventProcess.UpdateReplacementAsync(entity), entity);
+            return await PutDataAsync<ReplacementEntity, InternalErrorException>(async () => await _eventProcess.UpdateReplacementAsync(tournmentId, matchId, entity), entity);
         }
 
         [HttpDelete]
@@ -174,9 +174,9 @@ namespace ECA.CBF.Demo.Api.Controllers.v1
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteReplacementAsync([FromQuery] int id)
+        public async Task<IActionResult> DeleteReplacementAsync([FromRoute] int tournmentId, [FromRoute] int matchId, [FromQuery] int id)
         {
-            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteReplacementAsync(id), id);
+            return await PutDataAsync<int, InternalErrorException>(async () => await _eventProcess.DeleteReplacementAsync(tournmentId, matchId, id), id);
         }
     }
 }

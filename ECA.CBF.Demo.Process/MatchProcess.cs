@@ -3,6 +3,7 @@ using ECA.CBF.Demo.Entities.Exceptions;
 using ECA.CBF.Demo.Process.Interface;
 using ECA.CBF.Demo.Repository.Interface;
 using ECA.CBF.Demo.Util;
+using System.Text.Json;
 
 namespace ECA.CBF.Demo.Process
 {
@@ -12,14 +13,17 @@ namespace ECA.CBF.Demo.Process
         private readonly IGoalDbRepository _goalRepository;
         private readonly ICardDbRepository _cardRepository;
         private readonly IReplacementDbRepository _replacementRepository;
+        private readonly IRabbitMQRepository _rabbitMQRepository;
 
 
-        public MatchProcess(IMatchDbRepository matchRepository, IGoalDbRepository goalRepository, ICardDbRepository cardRepository, IReplacementDbRepository replacementRepository)
+
+        public MatchProcess(IMatchDbRepository matchRepository, IGoalDbRepository goalRepository, ICardDbRepository cardRepository, IReplacementDbRepository replacementRepository, IRabbitMQRepository rabbitMQRepository)
         {
             _matchRepository = matchRepository;
             _goalRepository = goalRepository;
             _cardRepository = cardRepository;
             _replacementRepository = replacementRepository;
+            _rabbitMQRepository = rabbitMQRepository;
         }
 
         public async Task<IEnumerable<MatchExtendedEntity>> ListAsync()
@@ -37,7 +41,8 @@ namespace ECA.CBF.Demo.Process
                     var replacements = await _replacementRepository.ListAsync(match.Id);
                     matchExtendedList.Add(match.GetMatchExtended(goals, cards, replacements));
                 }
-            }            
+            }
+
             return matchExtendedList;
         }
 
@@ -54,6 +59,7 @@ namespace ECA.CBF.Demo.Process
             var cards = await _cardRepository.ListAsync(match.Id);
             var replacements = await _replacementRepository.ListAsync(match.Id);
 
+            _rabbitMQRepository.SendMessageToQueue("cbf-match", JsonSerializer.Serialize(match));
             return match.GetMatchExtended(goals, cards, replacements);
         }
 

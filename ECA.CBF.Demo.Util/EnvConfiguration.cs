@@ -11,6 +11,7 @@ public class EnvConfiguration
     private static EnvConfiguration _configuration;
 
     public DatabaseConfig DatabaseConfig { get; private set; }
+    public RabbitMQConfig RabbitMQConfig { get; private set; }
 
     #endregion Properties
 
@@ -19,6 +20,7 @@ public class EnvConfiguration
     private EnvConfiguration(IConfiguration config)
     {
         DatabaseConfig = new DatabaseConfig(config);
+        RabbitMQConfig = new RabbitMQConfig(config);
     }
 
     #endregion Constructor
