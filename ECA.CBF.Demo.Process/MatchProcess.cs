@@ -15,8 +15,6 @@ namespace ECA.CBF.Demo.Process
         private readonly IReplacementDbRepository _replacementRepository;
         private readonly IRabbitMQRepository _rabbitMQRepository;
 
-
-
         public MatchProcess(IMatchDbRepository matchRepository, IGoalDbRepository goalRepository, ICardDbRepository cardRepository, IReplacementDbRepository replacementRepository, IRabbitMQRepository rabbitMQRepository)
         {
             _matchRepository = matchRepository;
@@ -59,23 +57,43 @@ namespace ECA.CBF.Demo.Process
             var cards = await _cardRepository.ListAsync(match.Id);
             var replacements = await _replacementRepository.ListAsync(match.Id);
 
-            _rabbitMQRepository.SendMessageToQueue("cbf-match", JsonSerializer.Serialize(match));
             return match.GetMatchExtended(goals, cards, replacements);
         }
 
         public async Task<int> InsertAsync(MatchBaseEntity entity)
         {
-            return await _matchRepository.InsertAsync(entity);
+            var result = await _matchRepository.InsertAsync(entity);
+            var match = await GetAsync(result);
+
+            _rabbitMQRepository.SendMessageToQueue(ActionsConstants.QUEUE_MATCH, GetMatchEventMessage(ActionsConstants.MATCH_NEW, match.TournmentId, match.Id, JsonSerializer.Serialize(match)));
+            return result;
         }
 
         public async Task UpdateAsync(MatchBaseEntity entity)
         {
             await _matchRepository.UpdateAsync(entity);
+            var match = await GetAsync(entity.Id);
+            _rabbitMQRepository.SendMessageToQueue(ActionsConstants.QUEUE_MATCH, GetMatchEventMessage(ActionsConstants.MATCH_UPDATE, match.TournmentId, match.Id, JsonSerializer.Serialize(match)));
         }
 
         public async Task DeleteAsync(int id)
         {
             await _matchRepository.DeleteAsync(id);
+            _rabbitMQRepository.SendMessageToQueue(ActionsConstants.QUEUE_MATCH, GetMatchEventMessage(ActionsConstants.MATCH_DELETE, default, id, string.Empty));
+        }
+
+        private string GetMatchEventMessage(string action, int tournmentId, int matchId, string content)
+        {
+            return $"{action}: MatchId: {matchId}, TournmentId: {tournmentId}; content: {content}";
+        }
+
+        private static class ActionsConstants
+        {
+            public static readonly string MATCH_NEW = "Match created";
+            public static readonly string MATCH_UPDATE = "Match updated";
+            public static readonly string MATCH_DELETE = "Break deleted";
+
+            public static readonly string QUEUE_MATCH = "cbf-match";
         }
     }
 }
