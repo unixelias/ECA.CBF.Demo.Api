@@ -1,0 +1,5290 @@
+{
+	"info": {
+		"_postman_id": "88d1ed89-fd0b-4482-b584-7e6fdb15ce94",
+		"name": "ECA.CBF.Demo.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/v{version}",
+			"item": [
+				{
+					"name": "tournments",
+					"item": [
+						{
+							"name": "{tournment Id}/matches/{match Id}/events",
+							"item": [
+								{
+									"name": "goals",
+									"item": [
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+											"id": "51b19cad-00b6-4791-adf6-4329541b6498",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"goals"
+													],
+													"variable": [
+														{
+															"id": "e555d4f3-3c9e-4532-8fe6-0363930e741a",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "4da1c208-76a0-4aa0-9c49-12d294bb8b41",
+															"key": "tournmentId",
+															"value": "nostrud et ut",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "2217f7ea-a178-4353-af32-a7d938cb94de",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -63954897,\n    \"goal-match-id\": 30759040,\n    \"goal-player\": \"ea\",\n    \"goal-player-id\": 91515740,\n    \"goal-team\": \"officia ea reprehenderit consequat eu\",\n    \"goal-team-id\": -36587029,\n    \"goal-date-time\": \"2014-03-01T01:13:45.845Z\"\n  },\n  {\n    \"id\": -55253571,\n    \"goal-match-id\": 12135665,\n    \"goal-player\": \"labor\",\n    \"goal-player-id\": -16111904,\n    \"goal-team\": \"veli\",\n    \"goal-team-id\": 787511,\n    \"goal-date-time\": \"1953-06-03T15:07:36.134Z\"\n  }\n]"
+												},
+												{
+													"id": "1d7a524e-1210-42df-9fde-b329b58b6d87",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+											"id": "b5b1b9e0-0a25-432d-bc6e-c8bf1bfa0019",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"goals"
+													],
+													"variable": [
+														{
+															"id": "e8df228a-c6bd-45f4-bd64-dad5289d1d7e",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "49c6f004-49d6-4b8f-b351-4813ba319f55",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "a32aec78-54f7-4946-8eeb-bfcf83901d03",
+													"name": "Created",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -63954897,\n    \"goal-match-id\": 30759040,\n    \"goal-player\": \"ea\",\n    \"goal-player-id\": 91515740,\n    \"goal-team\": \"officia ea reprehenderit consequat eu\",\n    \"goal-team-id\": -36587029,\n    \"goal-date-time\": \"2014-03-01T01:13:45.845Z\"\n  },\n  {\n    \"id\": -55253571,\n    \"goal-match-id\": 12135665,\n    \"goal-player\": \"labor\",\n    \"goal-player-id\": -16111904,\n    \"goal-team\": \"veli\",\n    \"goal-team-id\": 787511,\n    \"goal-date-time\": \"1953-06-03T15:07:36.134Z\"\n  }\n]"
+												},
+												{
+													"id": "aae6f803-c1b2-415b-aed4-763b8917a5d8",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+											"id": "b0cdd1f6-9c05-4aa9-b279-cd8ccdafb165",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"goals"
+													],
+													"variable": [
+														{
+															"id": "e344acd8-b950-438f-b79f-51558f3efa97",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "05e2f6da-c6e4-4619-948b-64a54e5d79e4",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4a75dc6a-b119-4302-a686-71a79a66e3c7",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a1af7d28-039f-4e24-8506-f478c67ff3e6",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": -26100212,\n  \"goal-match-id\": -32971527,\n  \"goal-player\": \"aliqua ut laboris cupidatat\",\n  \"goal-player-id\": 40342381,\n  \"goal-team\": \"nulla eiusmod\",\n  \"goal-team-id\": -23584334,\n  \"goal-date-time\": \"1987-07-26T06:57:50.204Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals",
+											"id": "335e7203-67e1-4486-bd02-21ff8c99950f",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals?id=10234706",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"goals"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "10234706"
+														}
+													],
+													"variable": [
+														{
+															"id": "131d9055-7713-48b0-ad0e-1de96b87b043",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "0e4d8ec1-cca5-4fe9-a91d-877c35096875",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d4092a40-903d-489a-9fa5-206e536668d6",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "02bc2de9-6562-49a0-9e1e-8179d6411b56",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/goals?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"goals"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "a4948b6f-6055-459d-bb9a-11abeb51007b"
+								},
+								{
+									"name": "cards",
+									"item": [
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+											"id": "04d14877-541f-4a1a-8e31-f1f733b73275",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"cards"
+													],
+													"variable": [
+														{
+															"id": "ae09eab7-cbf5-4300-ab1c-046988dcc510",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "d51a4acf-fc74-4c0c-a4e7-2675f6cf3996",
+															"key": "tournmentId",
+															"value": "nostrud et ut",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "41f08f75-d53c-45ab-be1a-58817a33b399",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -28889281,\n    \"card-match-id\": 53178092,\n    \"card-type\": \"ipsum id deserunt\",\n    \"card-description\": \"ut in\",\n    \"card-player-name\": \"consequat\",\n    \"card-player-id\": -43985496,\n    \"card-team-name\": \"nisi eiusmod qui est\",\n    \"card-team-id\": 90746674,\n    \"card-date-time\": \"2010-09-06T16:00:57.417Z\"\n  },\n  {\n    \"id\": 9140135,\n    \"card-match-id\": -2201760,\n    \"card-type\": \"proident fugiat\",\n    \"card-description\": \"est et\",\n    \"card-player-name\": \"non veniam adipisicing consectetur\",\n    \"card-player-id\": -5198993,\n    \"card-team-name\": \"ad non amet Lorem nulla\",\n    \"card-team-id\": 45175455,\n    \"card-date-time\": \"1972-05-21T04:50:00.174Z\"\n  }\n]"
+												},
+												{
+													"id": "6a1d6dd7-f4fe-4c7f-b41d-93e863b23534",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+											"id": "98fddb54-fc53-4974-a030-680f58bedef5",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"cards"
+													],
+													"variable": [
+														{
+															"id": "fbfefa57-c0f1-40bb-88aa-54887cd497cf",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "c83d536c-293b-4bd7-8491-401acd24ed45",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "126a764e-c12c-4cb8-b7a0-8ae9237a70b3",
+													"name": "Created",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -28889281,\n    \"card-match-id\": 53178092,\n    \"card-type\": \"ipsum id deserunt\",\n    \"card-description\": \"ut in\",\n    \"card-player-name\": \"consequat\",\n    \"card-player-id\": -43985496,\n    \"card-team-name\": \"nisi eiusmod qui est\",\n    \"card-team-id\": 90746674,\n    \"card-date-time\": \"2010-09-06T16:00:57.417Z\"\n  },\n  {\n    \"id\": 9140135,\n    \"card-match-id\": -2201760,\n    \"card-type\": \"proident fugiat\",\n    \"card-description\": \"est et\",\n    \"card-player-name\": \"non veniam adipisicing consectetur\",\n    \"card-player-id\": -5198993,\n    \"card-team-name\": \"ad non amet Lorem nulla\",\n    \"card-team-id\": 45175455,\n    \"card-date-time\": \"1972-05-21T04:50:00.174Z\"\n  }\n]"
+												},
+												{
+													"id": "fa223fc3-9624-456f-9486-34b4875f4a73",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+											"id": "87a4d537-53c6-4378-acea-657e231a5623",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"cards"
+													],
+													"variable": [
+														{
+															"id": "60261c31-59fe-4495-904d-05d5b91bcde8",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "12aeaeb4-ccff-4d63-94b8-9943662cf742",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "a30d354f-d181-4834-af00-ad805dbaee5d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2721f57a-15eb-401e-9347-23ff46b80d99",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 7725609,\n  \"card-match-id\": -57280252,\n  \"card-type\": \"ullamco dolore quis\",\n  \"card-description\": \"ex\",\n  \"card-player-name\": \"quis tempor reprehenderit dolore\",\n  \"card-player-id\": 5408773,\n  \"card-team-name\": \"do\",\n  \"card-team-id\": 64006713,\n  \"card-date-time\": \"2017-01-22T07:27:12.550Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards",
+											"id": "fa15d54c-9b23-4ba3-badf-cb98a6ec3ce8",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards?id=10234706",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"cards"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "10234706"
+														}
+													],
+													"variable": [
+														{
+															"id": "7f3baffd-cf99-4d0a-9a5a-ea120c6b8651",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "62e53e6d-023a-4188-a08e-3d336e72d7d5",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "a45b4e0f-d200-4c1e-813a-ab46e949293a",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f6cb6a3a-a342-4421-baf0-3bc0a46bbb43",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/cards?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"cards"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "f2a1a3b7-175d-4968-9eda-7f081dc8be7f"
+								},
+								{
+									"name": "replacements",
+									"item": [
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+											"id": "1cb8eb31-127c-4759-8a1b-3a2d9901538c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"replacements"
+													],
+													"variable": [
+														{
+															"id": "6af1e677-104e-490b-a22b-aa80ff81a2c4",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "78cf8b48-88e2-4f79-ae16-5ba2b3fd07e2",
+															"key": "tournmentId",
+															"value": "nostrud et ut",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "046a002d-7525-4f3f-94b9-98953686f6af",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -99664634,\n    \"replacement-match-id\": 49764759,\n    \"replacement-player-in-name\": \"commodo et aute\",\n    \"replacement-player-in-id\": 67690535,\n    \"replacement-player-out-name\": \"cillum\",\n    \"replacement-player-out-id\": -38554752,\n    \"replacement-team-name\": \"ex v\",\n    \"replacement-team-id\": -23678157,\n    \"replacement-date-time\": \"1948-08-19T08:30:08.040Z\"\n  },\n  {\n    \"id\": -11724025,\n    \"replacement-match-id\": -943887,\n    \"replacement-player-in-name\": \"tempor dolore\",\n    \"replacement-player-in-id\": -46071757,\n    \"replacement-player-out-name\": \"esse\",\n    \"replacement-player-out-id\": 95740236,\n    \"replacement-team-name\": \"tempor sed commodo\",\n    \"replacement-team-id\": -16768988,\n    \"replacement-date-time\": \"1991-05-29T23:21:10.587Z\"\n  }\n]"
+												},
+												{
+													"id": "0e0aa297-3a5c-40c7-9f7b-7cdeb00d9cfc",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "tournmentId",
+																	"value": "nostrud et ut",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+											"id": "92c077c1-587c-4ed3-bf5b-11fac5437650",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"replacements"
+													],
+													"variable": [
+														{
+															"id": "f7ffe54a-155e-45c2-87e6-52f0c972b3ce",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "d9b9eae9-8c25-4cd8-a740-8021cdbd207f",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "df227f8f-02bc-4af4-abab-7d15e6d5e24f",
+													"name": "Created",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "[\n  {\n    \"id\": -99664634,\n    \"replacement-match-id\": 49764759,\n    \"replacement-player-in-name\": \"commodo et aute\",\n    \"replacement-player-in-id\": 67690535,\n    \"replacement-player-out-name\": \"cillum\",\n    \"replacement-player-out-id\": -38554752,\n    \"replacement-team-name\": \"ex v\",\n    \"replacement-team-id\": -23678157,\n    \"replacement-date-time\": \"1948-08-19T08:30:08.040Z\"\n  },\n  {\n    \"id\": -11724025,\n    \"replacement-match-id\": -943887,\n    \"replacement-player-in-name\": \"tempor dolore\",\n    \"replacement-player-in-id\": -46071757,\n    \"replacement-player-out-name\": \"esse\",\n    \"replacement-player-out-id\": 95740236,\n    \"replacement-team-name\": \"tempor sed commodo\",\n    \"replacement-team-id\": -16768988,\n    \"replacement-date-time\": \"1991-05-29T23:21:10.587Z\"\n  }\n]"
+												},
+												{
+													"id": "3bdf2f4a-b30b-4422-a7fc-fefc7f6ac86d",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+											"id": "7d320117-8bef-4cc8-a6a6-35630bec75fa",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"replacements"
+													],
+													"variable": [
+														{
+															"id": "e26aa5a1-e396-4f43-bd7c-3ac34c962fa0",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "5a030ca7-7e46-4f2f-962c-b793b547fa7e",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "84fe58c3-9bfd-414d-8ec9-4dbb49c3ced2",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "d352d063-fb70-44a5-a778-3e81e71aab6a",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"id\": 59573337,\n  \"replacement-match-id\": -74606554,\n  \"replacement-player-in-name\": \"amet anim qui\",\n  \"replacement-player-in-id\": -11997035,\n  \"replacement-player-out-name\": \"sed\",\n  \"replacement-player-out-id\": 34560654,\n  \"replacement-team-name\": \"occaecat velit in cillum proid\",\n  \"replacement-team-id\": -49131264,\n  \"replacement-date-time\": \"1947-12-19T15:53:38.454Z\"\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements",
+											"id": "3e41cf32-e2b9-4e90-b1d4-03d3fb850c80",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements?id=10234706",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"replacements"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "10234706"
+														}
+													],
+													"variable": [
+														{
+															"id": "a31f3ea4-a85a-4d29-af0e-9c8db36e568b",
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"id": "754d8da3-42db-489c-92f6-e633fc1ea21f",
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "bdc91122-101a-4d6f-a66f-5dbcbd4cf270",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9b80857d-c479-45a9-b009-dfb7c73c03d3",
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/replacements?id=10234706",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"tournments",
+																":tournmentId",
+																"matches",
+																":matchId",
+																"events",
+																"replacements"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "10234706"
+																}
+															],
+															"variable": [
+																{
+																	"key": "tournmentId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "matchId",
+																	"value": "10234706",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "298fda6c-cc5e-44fd-8a53-015058dd5f38"
+								},
+								{
+									"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/start",
+									"id": "41a77303-39aa-4469-b162-140e64ddd24f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/start?dateStart=1973-09-26T18:41:29.186Z",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments",
+												":tournmentId",
+												"matches",
+												":matchId",
+												"events",
+												"start"
+											],
+											"query": [
+												{
+													"key": "dateStart",
+													"value": "1973-09-26T18:41:29.186Z"
+												}
+											],
+											"variable": [
+												{
+													"id": "77218a6a-c267-4f94-b74b-4e6e07d4dcfc",
+													"key": "tournmentId",
+													"value": "10234706",
+													"description": "(Required) "
+												},
+												{
+													"id": "66bf3c49-440a-4b50-acf4-bf2542901c74",
+													"key": "matchId",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "64ebc02b-6750-429c-b957-1e5dc0e08485",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/start?dateStart=1973-09-26T18:41:29.186Z",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"start"
+													],
+													"query": [
+														{
+															"key": "dateStart",
+															"value": "1973-09-26T18:41:29.186Z"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "[\n  {\n    \"match-id\": -79904216,\n    \"match-stadium\": \"exercitation in nisi\",\n    \"match-date-provided\": \"2017-05-14T22:20:08.243Z\",\n    \"match-date-start\": \"1952-03-01T18:17:53.800Z\",\n    \"match-date-start-break\": \"2022-07-16T23:45:32.780Z\",\n    \"match-date-end-break\": \"1997-07-08T09:00:21.687Z\",\n    \"match-date-end\": \"1997-04-18T02:51:30.536Z\",\n    \"match-tournment-id\": -4370641,\n    \"match-team-host-id\": 20689211,\n    \"match-team-guest-id\": 59426354,\n    \"match-referee-id\": 65925137,\n    \"match-tournment\": \"mollit do enim\",\n    \"match-team-host\": \"do adipisicing veniam culpa nostrud\",\n    \"match-team-host-goals\": 30238577,\n    \"match-team-guest\": \"nostrud adipisicing eu\",\n    \"match-team-guest-goals\": 92329163,\n    \"match-referee-name\": \"dolor sit\"\n  },\n  {\n    \"match-id\": 61577994,\n    \"match-stadium\": \"ut proident pariatur officia ullamco\",\n    \"match-date-provided\": \"1984-09-26T17:20:13.251Z\",\n    \"match-date-start\": \"1947-06-24T16:11:21.627Z\",\n    \"match-date-start-break\": \"1991-08-21T07:24:00.080Z\",\n    \"match-date-end-break\": \"2015-09-01T16:11:45.474Z\",\n    \"match-date-end\": \"2015-06-05T11:22:10.843Z\",\n    \"match-tournment-id\": 10057007,\n    \"match-team-host-id\": -51078664,\n    \"match-team-guest-id\": 48998964,\n    \"match-referee-id\": -9533650,\n    \"match-tournment\": \"aliquip aliqua\",\n    \"match-team-host\": \"non proident\",\n    \"match-team-host-goals\": 66566167,\n    \"match-team-guest\": \"proident minim cil\",\n    \"match-team-guest-goals\": 25051242,\n    \"match-referee-name\": \"sunt in irure officia\"\n  }\n]"
+										},
+										{
+											"id": "09208b59-50a6-4f6f-a5da-8411d1005ef3",
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/start?dateStart=1973-09-26T18:41:29.186Z",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"start"
+													],
+													"query": [
+														{
+															"key": "dateStart",
+															"value": "1973-09-26T18:41:29.186Z"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/end",
+									"id": "ef10dcac-42df-4bdf-bdd6-39a394126e85",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/end?dateEnd=1973-09-26T18:41:29.186Z",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments",
+												":tournmentId",
+												"matches",
+												":matchId",
+												"events",
+												"end"
+											],
+											"query": [
+												{
+													"key": "dateEnd",
+													"value": "1973-09-26T18:41:29.186Z"
+												}
+											],
+											"variable": [
+												{
+													"id": "05f096c3-1965-4933-b38f-26130e0a1df9",
+													"key": "tournmentId",
+													"value": "10234706",
+													"description": "(Required) "
+												},
+												{
+													"id": "b3c1683c-ad85-4ecb-8841-8ac345d60b44",
+													"key": "matchId",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "58351e59-3bbe-4fef-a2a1-006be45bb13c",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/end?dateEnd=1973-09-26T18:41:29.186Z",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"end"
+													],
+													"query": [
+														{
+															"key": "dateEnd",
+															"value": "1973-09-26T18:41:29.186Z"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "[\n  {\n    \"match-id\": -79904216,\n    \"match-stadium\": \"exercitation in nisi\",\n    \"match-date-provided\": \"2017-05-14T22:20:08.243Z\",\n    \"match-date-start\": \"1952-03-01T18:17:53.800Z\",\n    \"match-date-start-break\": \"2022-07-16T23:45:32.780Z\",\n    \"match-date-end-break\": \"1997-07-08T09:00:21.687Z\",\n    \"match-date-end\": \"1997-04-18T02:51:30.536Z\",\n    \"match-tournment-id\": -4370641,\n    \"match-team-host-id\": 20689211,\n    \"match-team-guest-id\": 59426354,\n    \"match-referee-id\": 65925137,\n    \"match-tournment\": \"mollit do enim\",\n    \"match-team-host\": \"do adipisicing veniam culpa nostrud\",\n    \"match-team-host-goals\": 30238577,\n    \"match-team-guest\": \"nostrud adipisicing eu\",\n    \"match-team-guest-goals\": 92329163,\n    \"match-referee-name\": \"dolor sit\"\n  },\n  {\n    \"match-id\": 61577994,\n    \"match-stadium\": \"ut proident pariatur officia ullamco\",\n    \"match-date-provided\": \"1984-09-26T17:20:13.251Z\",\n    \"match-date-start\": \"1947-06-24T16:11:21.627Z\",\n    \"match-date-start-break\": \"1991-08-21T07:24:00.080Z\",\n    \"match-date-end-break\": \"2015-09-01T16:11:45.474Z\",\n    \"match-date-end\": \"2015-06-05T11:22:10.843Z\",\n    \"match-tournment-id\": 10057007,\n    \"match-team-host-id\": -51078664,\n    \"match-team-guest-id\": 48998964,\n    \"match-referee-id\": -9533650,\n    \"match-tournment\": \"aliquip aliqua\",\n    \"match-team-host\": \"non proident\",\n    \"match-team-host-goals\": 66566167,\n    \"match-team-guest\": \"proident minim cil\",\n    \"match-team-guest-goals\": 25051242,\n    \"match-referee-name\": \"sunt in irure officia\"\n  }\n]"
+										},
+										{
+											"id": "8c76d862-2aac-4f6e-a23d-c6be1175cf66",
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/end?dateEnd=1973-09-26T18:41:29.186Z",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"end"
+													],
+													"query": [
+														{
+															"key": "dateEnd",
+															"value": "1973-09-26T18:41:29.186Z"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/break",
+									"id": "d96a32c3-b12c-409a-aa9d-119cf1d9f2b7",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/break?date=1973-09-26T18:41:29.186Z&start=false&end=true",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments",
+												":tournmentId",
+												"matches",
+												":matchId",
+												"events",
+												"break"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "1973-09-26T18:41:29.186Z"
+												},
+												{
+													"key": "start",
+													"value": "false"
+												},
+												{
+													"key": "end",
+													"value": "true"
+												}
+											],
+											"variable": [
+												{
+													"id": "bd7101b5-1092-4d2f-b9d0-628ab21e8fc2",
+													"key": "tournmentId",
+													"value": "10234706",
+													"description": "(Required) "
+												},
+												{
+													"id": "acce439b-280c-426c-8299-378e6744b0da",
+													"key": "matchId",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "c86fd581-e865-48b9-b2d7-6a6b773cc701",
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/break?date=1973-09-26T18:41:29.186Z&start=true&end=true",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"break"
+													],
+													"query": [
+														{
+															"key": "date",
+															"value": "1973-09-26T18:41:29.186Z"
+														},
+														{
+															"key": "start",
+															"value": "true"
+														},
+														{
+															"key": "end",
+															"value": "true"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "[\n  {\n    \"match-id\": -79904216,\n    \"match-stadium\": \"exercitation in nisi\",\n    \"match-date-provided\": \"2017-05-14T22:20:08.243Z\",\n    \"match-date-start\": \"1952-03-01T18:17:53.800Z\",\n    \"match-date-start-break\": \"2022-07-16T23:45:32.780Z\",\n    \"match-date-end-break\": \"1997-07-08T09:00:21.687Z\",\n    \"match-date-end\": \"1997-04-18T02:51:30.536Z\",\n    \"match-tournment-id\": -4370641,\n    \"match-team-host-id\": 20689211,\n    \"match-team-guest-id\": 59426354,\n    \"match-referee-id\": 65925137,\n    \"match-tournment\": \"mollit do enim\",\n    \"match-team-host\": \"do adipisicing veniam culpa nostrud\",\n    \"match-team-host-goals\": 30238577,\n    \"match-team-guest\": \"nostrud adipisicing eu\",\n    \"match-team-guest-goals\": 92329163,\n    \"match-referee-name\": \"dolor sit\"\n  },\n  {\n    \"match-id\": 61577994,\n    \"match-stadium\": \"ut proident pariatur officia ullamco\",\n    \"match-date-provided\": \"1984-09-26T17:20:13.251Z\",\n    \"match-date-start\": \"1947-06-24T16:11:21.627Z\",\n    \"match-date-start-break\": \"1991-08-21T07:24:00.080Z\",\n    \"match-date-end-break\": \"2015-09-01T16:11:45.474Z\",\n    \"match-date-end\": \"2015-06-05T11:22:10.843Z\",\n    \"match-tournment-id\": 10057007,\n    \"match-team-host-id\": -51078664,\n    \"match-team-guest-id\": 48998964,\n    \"match-referee-id\": -9533650,\n    \"match-tournment\": \"aliquip aliqua\",\n    \"match-team-host\": \"non proident\",\n    \"match-team-host-goals\": 66566167,\n    \"match-team-guest\": \"proident minim cil\",\n    \"match-team-guest-goals\": 25051242,\n    \"match-referee-name\": \"sunt in irure officia\"\n  }\n]"
+										},
+										{
+											"id": "3de57ada-4175-4c6e-b93c-6bb1e98f0ac6",
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/tournments/:tournmentId/matches/:matchId/events/break?date=1973-09-26T18:41:29.186Z&start=true&end=true",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"tournments",
+														":tournmentId",
+														"matches",
+														":matchId",
+														"events",
+														"break"
+													],
+													"query": [
+														{
+															"key": "date",
+															"value": "1973-09-26T18:41:29.186Z"
+														},
+														{
+															"key": "start",
+															"value": "true"
+														},
+														{
+															"key": "end",
+															"value": "true"
+														}
+													],
+													"variable": [
+														{
+															"key": "tournmentId",
+															"value": "10234706",
+															"description": "(Required) "
+														},
+														{
+															"key": "matchId",
+															"value": "10234706",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "8347babf-bbfa-4408-8df4-083a26068e42"
+						},
+						{
+							"name": "/api/v{{version}}/tournments",
+							"id": "f58a1e48-6acf-4446-9367-48d49fcf944b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"tournments"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "df7700f0-9c5b-4b19-a0eb-8cebef0f199b",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": 48474195,\n    \"tournament-name\": \"ullamco non laborum\",\n    \"tournament-grade\": \"ipsum tempor\",\n    \"tournament-league\": \"sit est anim\",\n    \"tournament-league-id\": -13157968,\n    \"tournament-season\": 22483374\n  },\n  {\n    \"id\": -75410735,\n    \"tournament-name\": \"dolore pariatur\",\n    \"tournament-grade\": \"deserunt\",\n    \"tournament-league\": \"qu\",\n    \"tournament-league-id\": 18786330,\n    \"tournament-season\": -43042901\n  }\n]"
+								},
+								{
+									"id": "75648618-348f-4ab4-baa0-786c86ee7552",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/tournments",
+							"id": "3aa95dd8-a5ad-4926-aa1a-5e62c78166bf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"tournments"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "89f7cf09-dcef-46b8-9437-8e3453b618eb",
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": 48474195,\n    \"tournament-name\": \"ullamco non laborum\",\n    \"tournament-grade\": \"ipsum tempor\",\n    \"tournament-league\": \"sit est anim\",\n    \"tournament-league-id\": -13157968,\n    \"tournament-season\": 22483374\n  },\n  {\n    \"id\": -75410735,\n    \"tournament-name\": \"dolore pariatur\",\n    \"tournament-grade\": \"deserunt\",\n    \"tournament-league\": \"qu\",\n    \"tournament-league-id\": 18786330,\n    \"tournament-season\": -43042901\n  }\n]"
+								},
+								{
+									"id": "adb247ce-dd04-4945-b339-1349593433af",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/tournments",
+							"id": "8ad37980-3bb5-4f05-af1b-d29139a861c0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"tournments"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f3da82f9-593f-4ddc-8c2f-24fbb2625aa4",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "c425426d-2e55-411c-822b-d26c2b398f67",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/tournments",
+							"id": "49b42f28-9578-4e34-82bb-75813db4506e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/tournments?id=10234706",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"tournments"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "10234706"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7eda81c6-043c-446b-966c-684c1de9eaf1",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "9c306663-adcb-4ef3-be45-1cb92153cb69",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/tournments/:id",
+							"id": "e92acf0d-0c02-43e5-9816-6ebfb9fec773",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/tournments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"tournments",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "450fc2a2-524d-4518-b24b-ab1d4c9198d4",
+											"key": "id",
+											"value": "10234706",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b30e07ae-aa0a-4f6f-b660-ce3134336fc4",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": 11438782,\n  \"tournament-name\": \"consectetur\",\n  \"tournament-grade\": \"ea\",\n  \"tournament-league\": \"incididunt reprehenderit nostrud mollit\",\n  \"tournament-league-id\": 97501181,\n  \"tournament-season\": 9221658\n}"
+								},
+								{
+									"id": "4a8cb72a-09a5-41d3-a10f-1855da6c4dc3",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/tournments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"tournments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "2b2e4c13-2067-4618-975c-28bdc44dd327"
+				},
+				{
+					"name": "matches",
+					"item": [
+						{
+							"name": "/api/v{{version}}/matches",
+							"id": "1677dd41-ae2c-4a98-b738-aed8df071256",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/matches",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"matches"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a3e81ca7-f3da-499b-aef4-9272b0ac70bb",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"match-id\": -88015801,\n    \"match-stadium\": \"pariatur in\",\n    \"match-date-provided\": \"1968-07-28T05:26:05.381Z\",\n    \"match-date-start\": \"1944-09-23T00:38:46.959Z\",\n    \"match-date-start-break\": \"2016-09-21T17:08:00.172Z\",\n    \"match-date-end-break\": \"2003-07-08T06:52:56.971Z\",\n    \"match-date-end\": \"1964-11-13T03:38:09.723Z\",\n    \"match-tournment-id\": 14523819,\n    \"match-team-host-id\": -4839200,\n    \"match-team-guest-id\": 13471530,\n    \"match-referee-id\": -74803417,\n    \"match-tournment\": \"Duis ipsum\",\n    \"match-team-host\": \"velit do cupidatat\",\n    \"match-team-host-goals\": -70893650,\n    \"match-team-guest\": \"tempor ea velit\",\n    \"match-team-guest-goals\": -3069061,\n    \"match-referee-name\": \"sit fugiat id enim\",\n    \"goal-list\": [\n      {\n        \"id\": -88314023,\n        \"goal-match-id\": -26999078,\n        \"goal-player\": \"adipisicing Ut in sit\",\n        \"goal-player-id\": -33107818,\n        \"goal-team\": \"non\",\n        \"goal-team-id\": 98387203,\n        \"goal-date-time\": \"1970-11-21T08:51:21.789Z\"\n      },\n      {\n        \"id\": -39874307,\n        \"goal-match-id\": -37345210,\n        \"goal-player\": \"fugiat consequat\",\n        \"goal-player-id\": 66019049,\n        \"goal-team\": \"eiusmod\",\n        \"goal-team-id\": -31877507,\n        \"goal-date-time\": \"1998-04-19T04:11:58.656Z\"\n      }\n    ],\n    \"card-list\": [\n      {\n        \"id\": -16029758,\n        \"card-match-id\": 12428135,\n        \"card-type\": \"ullamco dolore consectetur ipsum\",\n        \"card-description\": \"veniam do Duis ad\",\n        \"card-player-name\": \"dolore nisi est\",\n        \"card-player-id\": -70509657,\n        \"card-team-name\": \"tempor dolor eu dolore\",\n        \"card-team-id\": 39134807,\n        \"card-date-time\": \"2006-05-28T06:48:36.734Z\"\n      },\n      {\n        \"id\": 81278306,\n        \"card-match-id\": 13659124,\n        \"card-type\": \"aliqua aliquip in voluptate\",\n        \"card-description\": \"in ut sint sit\",\n        \"card-player-name\": \"proident velit\",\n        \"card-player-id\": 64067931,\n        \"card-team-name\": \"elit\",\n        \"card-team-id\": 4273204,\n        \"card-date-time\": \"1946-04-16T03:04:29.377Z\"\n      }\n    ],\n    \"replacement-list\": [\n      {\n        \"id\": -28110085,\n        \"replacement-match-id\": 55751396,\n        \"replacement-player-in-name\": \"ex\",\n        \"replacement-player-in-id\": 36890512,\n        \"replacement-player-out-name\": \"laborum anim elit\",\n        \"replacement-player-out-id\": 4030599,\n        \"replacement-team-name\": \"est aute mollit\",\n        \"replacement-team-id\": -15770965,\n        \"replacement-date-time\": \"1964-09-29T12:27:15.313Z\"\n      },\n      {\n        \"id\": 63284319,\n        \"replacement-match-id\": 67164927,\n        \"replacement-player-in-name\": \"ut\",\n        \"replacement-player-in-id\": -38895469,\n        \"replacement-player-out-name\": \"reprehenderit deser\",\n        \"replacement-player-out-id\": -47503273,\n        \"replacement-team-name\": \"eu in\",\n        \"replacement-team-id\": 61268119,\n        \"replacement-date-time\": \"1990-01-06T22:13:35.302Z\"\n      }\n    ]\n  },\n  {\n    \"match-id\": -91368201,\n    \"match-stadium\": \"amet esse\",\n    \"match-date-provided\": \"1989-07-29T14:32:24.425Z\",\n    \"match-date-start\": \"1974-07-25T06:19:22.801Z\",\n    \"match-date-start-break\": \"1955-12-26T06:07:32.598Z\",\n    \"match-date-end-break\": \"1983-03-28T23:45:57.806Z\",\n    \"match-date-end\": \"1990-10-26T21:00:25.315Z\",\n    \"match-tournment-id\": -99912816,\n    \"match-team-host-id\": 52364711,\n    \"match-team-guest-id\": -7647367,\n    \"match-referee-id\": 70759654,\n    \"match-tournment\": \"Duis ad\",\n    \"match-team-host\": \"ut \",\n    \"match-team-host-goals\": 90810408,\n    \"match-team-guest\": \"in ullamco mollit ut eiusmod\",\n    \"match-team-guest-goals\": -68492704,\n    \"match-referee-name\": \"tempor sint\",\n    \"goal-list\": [\n      {\n        \"id\": -41015653,\n        \"goal-match-id\": 32702012,\n        \"goal-player\": \"proident sit sint\",\n        \"goal-player-id\": -54032709,\n        \"goal-team\": \"elit pariatur irure reprehenderit\",\n        \"goal-team-id\": -91812111,\n        \"goal-date-time\": \"1994-03-18T10:26:46.797Z\"\n      },\n      {\n        \"id\": 67872213,\n        \"goal-match-id\": 14356245,\n        \"goal-player\": \"anim aliqua eu\",\n        \"goal-player-id\": 77462869,\n        \"goal-team\": \"amet in adipisicing do\",\n        \"goal-team-id\": -61405282,\n        \"goal-date-time\": \"1969-03-08T16:58:43.487Z\"\n      }\n    ],\n    \"card-list\": [\n      {\n        \"id\": 88068399,\n        \"card-match-id\": 14442660,\n        \"card-type\": \"dolore laboris minim sed in\",\n        \"card-description\": \"eu cupidatat\",\n        \"card-player-name\": \"commodo\",\n        \"card-player-id\": 35533427,\n        \"card-team-name\": \"Lorem sint non voluptate\",\n        \"card-team-id\": -70489439,\n        \"card-date-time\": \"1979-11-07T11:22:58.430Z\"\n      },\n      {\n        \"id\": 32359534,\n        \"card-match-id\": -74405772,\n        \"card-type\": \"ut quis\",\n        \"card-description\": \"ut enim\",\n        \"card-player-name\": \"Duis laboris proi\",\n        \"card-player-id\": 85104254,\n        \"card-team-name\": \"pariatur proident nisi deserunt aute\",\n        \"card-team-id\": 61681165,\n        \"card-date-time\": \"1976-10-04T06:28:10.673Z\"\n      }\n    ],\n    \"replacement-list\": [\n      {\n        \"id\": -86294822,\n        \"replacement-match-id\": -26280854,\n        \"replacement-player-in-name\": \"eiusmod ea laboris\",\n        \"replacement-player-in-id\": 11355572,\n        \"replacement-player-out-name\": \"et laborum\",\n        \"replacement-player-out-id\": -66338676,\n        \"replacement-team-name\": \"sunt incididunt eiusmod\",\n        \"replacement-team-id\": 96494747,\n        \"replacement-date-time\": \"1995-09-24T10:09:14.706Z\"\n      },\n      {\n        \"id\": 39019754,\n        \"replacement-match-id\": -96925832,\n        \"replacement-player-in-name\": \"pariatur veniam culpa irure\",\n        \"replacement-player-in-id\": 73650216,\n        \"replacement-player-out-name\": \"Excepteur sunt occaecat\",\n        \"replacement-player-out-id\": -87015691,\n        \"replacement-team-name\": \"eu dolore sed\",\n        \"replacement-team-id\": -38144584,\n        \"replacement-date-time\": \"1947-10-03T12:26:57.432Z\"\n      }\n    ]\n  }\n]"
+								},
+								{
+									"id": "daacfa7f-0796-47b2-a4ba-9053eab64333",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/matches",
+							"id": "18ca3810-8ee9-40d4-b7b1-3ddf8880dba4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/matches",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"matches"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "5c18393d-d56e-4d01-9102-ea32fc65b688",
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "10234706"
+								},
+								{
+									"id": "70ffbca6-8658-4965-9901-b6ee5a296dcf",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/matches",
+							"id": "5ca60d57-2af5-4124-88c6-c26ac3bae525",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/matches",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"matches"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "333d9763-1a09-4111-898f-187fe703eb92",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "3fb22237-2f12-4156-85e2-256aec406d42",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"match-id\": -20973257,\n  \"match-stadium\": \"ullamco in\",\n  \"match-date-provided\": \"2004-04-01T14:19:36.183Z\",\n  \"match-date-start\": \"1989-05-12T10:44:47.618Z\",\n  \"match-date-start-break\": \"1980-02-02T09:42:14.120Z\",\n  \"match-date-end-break\": \"1991-10-13T11:01:48.954Z\",\n  \"match-date-end\": \"1950-12-30T21:25:57.190Z\",\n  \"match-tournment-id\": 27615783,\n  \"match-team-host-id\": 42523079,\n  \"match-team-guest-id\": -79521244,\n  \"match-referee-id\": -84704369\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/matches",
+							"id": "b56993ce-43c0-433e-b2bf-1b5662072c60",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/matches?id=10234706",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"matches"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "10234706"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "9c55012c-b242-4a43-b3c4-d714af1f95e5",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "967672e6-ce7b-4768-a1f1-3897f264d9b7",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/matches/:id",
+							"id": "089a1946-ef6d-4d9c-8172-dbfd9a9b34f6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/matches/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"matches",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "c82f669d-10f0-4215-b491-c238e355f831",
+											"key": "id",
+											"value": "10234706",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "73b1ed02-41d2-4642-951e-8c55a4f731d7",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"match-id\": 56451051,\n  \"match-stadium\": \"culpa ea\",\n  \"match-date-provided\": \"1943-04-30T17:55:03.752Z\",\n  \"match-date-start\": \"2018-07-08T10:01:40.350Z\",\n  \"match-date-start-break\": \"1956-08-01T13:55:08.392Z\",\n  \"match-date-end-break\": \"1968-04-27T01:17:03.862Z\",\n  \"match-date-end\": \"1945-11-22T22:17:19.530Z\",\n  \"match-tournment-id\": 18308723,\n  \"match-team-host-id\": -83489017,\n  \"match-team-guest-id\": 27279351,\n  \"match-referee-id\": -76041811,\n  \"match-tournment\": \"eiusmod aliqua\",\n  \"match-team-host\": \"tempor dolore\",\n  \"match-team-host-goals\": -11625433,\n  \"match-team-guest\": \"irure dolor\",\n  \"match-team-guest-goals\": 39535421,\n  \"match-referee-name\": \"aliqua minim\",\n  \"goal-list\": [\n    {\n      \"id\": 73341819,\n      \"goal-match-id\": 98981176,\n      \"goal-player\": \"cupidatat velit\",\n      \"goal-player-id\": -86658256,\n      \"goal-team\": \"pariatur quis\",\n      \"goal-team-id\": -95357347,\n      \"goal-date-time\": \"1980-07-26T00:29:30.255Z\"\n    },\n    {\n      \"id\": -41550810,\n      \"goal-match-id\": 49481964,\n      \"goal-player\": \"irure temp\",\n      \"goal-player-id\": -67613739,\n      \"goal-team\": \"elit tempor nisi\",\n      \"goal-team-id\": 13757062,\n      \"goal-date-time\": \"1950-12-28T06:25:32.013Z\"\n    }\n  ],\n  \"card-list\": [\n    {\n      \"id\": -47119496,\n      \"card-match-id\": -94465738,\n      \"card-type\": \"dese\",\n      \"card-description\": \"cillum Ut do laborum cupidatat\",\n      \"card-player-name\": \"Excepteur\",\n      \"card-player-id\": 82106461,\n      \"card-team-name\": \"est\",\n      \"card-team-id\": 47913673,\n      \"card-date-time\": \"1967-02-20T13:05:50.529Z\"\n    },\n    {\n      \"id\": 28016112,\n      \"card-match-id\": -31369996,\n      \"card-type\": \"sit\",\n      \"card-description\": \"Excepteur Lorem quis\",\n      \"card-player-name\": \"in ad\",\n      \"card-player-id\": 38204788,\n      \"card-team-name\": \"mollit aliqua\",\n      \"card-team-id\": 6783670,\n      \"card-date-time\": \"1987-11-29T02:08:39.898Z\"\n    }\n  ],\n  \"replacement-list\": [\n    {\n      \"id\": 86478240,\n      \"replacement-match-id\": 77156108,\n      \"replacement-player-in-name\": \"velit\",\n      \"replacement-player-in-id\": -28263679,\n      \"replacement-player-out-name\": \"dolore dolor aliquip cupidatat\",\n      \"replacement-player-out-id\": 35418940,\n      \"replacement-team-name\": \"est dolore\",\n      \"replacement-team-id\": 32834368,\n      \"replacement-date-time\": \"1973-01-25T15:14:59.113Z\"\n    },\n    {\n      \"id\": 20408925,\n      \"replacement-match-id\": -17538567,\n      \"replacement-player-in-name\": \"minim anim\",\n      \"replacement-player-in-id\": -38745420,\n      \"replacement-player-out-name\": \"et ex nisi labore\",\n      \"replacement-player-out-id\": 50660587,\n      \"replacement-team-name\": \"proident occaecat id sit\",\n      \"replacement-team-id\": -45624906,\n      \"replacement-date-time\": \"2018-12-21T13:52:14.580Z\"\n    }\n  ]\n}"
+								},
+								{
+									"id": "ecbb1044-1969-4da0-98d5-11756ca6a1b9",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/matches/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"matches",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "144c4007-2ec4-480f-9651-089b6d9ca963"
+				},
+				{
+					"name": "players",
+					"item": [
+						{
+							"name": "/api/v{{version}}/players",
+							"id": "5b1f5e61-be56-4565-8b52-3fdbfad7a83f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"players"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "aadb08d8-e2c8-417a-96ea-fb5afbcb1cb5",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": 19054726,\n    \"name\": \"anim non dolore eiusmod\",\n    \"birth-date\": \"mollit ea dolore\",\n    \"country\": \"do nulla amet\",\n    \"team\": \"sint\"\n  },\n  {\n    \"id\": 50057157,\n    \"name\": \"occ\",\n    \"birth-date\": \"dolore enim\",\n    \"country\": \"est\",\n    \"team\": \"ullamco tempor\"\n  }\n]"
+								},
+								{
+									"id": "f44a0b91-eb7d-4ce2-9c32-3d20a7e1b482",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/players",
+							"id": "581f9fb4-ccd5-4b0c-a742-e3ddd8df2205",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"players"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ae19ce78-68b1-44be-91f0-06f2096ea411",
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": 19054726,\n    \"name\": \"anim non dolore eiusmod\",\n    \"birth-date\": \"mollit ea dolore\",\n    \"country\": \"do nulla amet\",\n    \"team\": \"sint\"\n  },\n  {\n    \"id\": 50057157,\n    \"name\": \"occ\",\n    \"birth-date\": \"dolore enim\",\n    \"country\": \"est\",\n    \"team\": \"ullamco tempor\"\n  }\n]"
+								},
+								{
+									"id": "e8df1ad5-f15e-4911-a717-1e317d3c5d1e",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/players",
+							"id": "5b2c8671-b7c6-40bc-bf3c-bbd03ea9e4d8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/players",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"players"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "8199edc7-aa8d-4205-ab5d-56e9edbe2a99",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "d54dfcdc-f68a-4526-849f-88223d12c3f2",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/players",
+							"id": "a496a1cc-e92b-4d1e-acb4-b42768079267",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/players?id=10234706",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"players"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "10234706"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c7f0513a-2ca8-46c5-b841-fcae23bcb59b",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "1815e63b-fa73-4864-b627-8c4df4cd3fbf",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/players/:id",
+							"id": "15a5f782-8f83-4bd0-ba1b-4a8256e2f1ff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/players/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"players",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "47cb6191-a268-45b7-9551-f40042ef513c",
+											"key": "id",
+											"value": "10234706",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d3af2434-5e84-4c9a-951b-1492e476b89e",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": -61864251,\n  \"name\": \"nulla mollit quis\",\n  \"birth-date\": \"ut aliqua Lorem exercitation laborum\",\n  \"country\": \"culpa\",\n  \"team\": \"incididunt esse ea\"\n}"
+								},
+								{
+									"id": "24d46320-5529-464d-98e5-be5cb4d67a9d",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/players/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"players",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "7bd06767-3d29-4c61-8b3f-df94f6307908"
+				},
+				{
+					"name": "teams",
+					"item": [
+						{
+							"name": "/api/v{{version}}/teams",
+							"id": "e7c084fb-41b2-48e8-930b-bddae211fbab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/teams",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"teams"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ebc30969-a5be-4bef-a2cd-5abcf688d687",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": -2807924,\n    \"name\": \"enim Ut sunt\",\n    \"short-name\": \"dolor proident\",\n    \"city\": \"exercitation sunt\"\n  },\n  {\n    \"id\": -68380582,\n    \"name\": \"incididunt laborum Ut exercitation\",\n    \"short-name\": \"non qui\",\n    \"city\": \"mini\"\n  }\n]"
+								},
+								{
+									"id": "f7a41196-d3f1-4e5b-8f84-1729827c960c",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/teams",
+							"id": "2754c54a-5c3a-4d2d-8f69-7b941c715043",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/teams",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"teams"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "162412f9-f4fc-4c6a-acd5-30725ab1b62f",
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": -2807924,\n    \"name\": \"enim Ut sunt\",\n    \"short-name\": \"dolor proident\",\n    \"city\": \"exercitation sunt\"\n  },\n  {\n    \"id\": -68380582,\n    \"name\": \"incididunt laborum Ut exercitation\",\n    \"short-name\": \"non qui\",\n    \"city\": \"mini\"\n  }\n]"
+								},
+								{
+									"id": "78b38898-ebbb-4b78-a463-76c66e64d244",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/teams",
+							"id": "c213241b-ec32-4d69-a3e9-ef9c7e40157c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/teams",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"teams"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7680e7b0-ea8c-4d35-8c76-6cb51d1c714a",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "27ca6a3b-89e1-45b8-972b-ab2e4ba279c4",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/teams",
+							"id": "68064f10-7d7e-483c-87b9-beb0503d86f5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/teams?id=10234706",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"teams"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "10234706"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7a24328e-70be-4855-9b42-92a066580f4a",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "c2b58037-57de-45a0-96d6-84fa4edd2b8d",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/teams/:id",
+							"id": "251f67cc-949d-4e4a-b26e-8b410388f492",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/teams/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"teams",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "f0b6d5c3-effd-4be5-8242-f9fd06f96063",
+											"key": "id",
+											"value": "10234706",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "29b3b7dc-54c2-4fc5-b0fc-cd8d07b3700f",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": 55400528,\n  \"name\": \"veniam ut\",\n  \"short-name\": \"est\",\n  \"city\": \"culpa in\"\n}"
+								},
+								{
+									"id": "b9245ba2-b43a-4cc9-9ce3-a3d042915f8b",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/teams/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"teams",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "274022b4-f488-4e8d-9439-13c12f19c6a6"
+				},
+				{
+					"name": "transfers",
+					"item": [
+						{
+							"name": "/api/v{{version}}/transfers",
+							"id": "eb711a4f-34fe-4e61-82f3-6a005694f2e8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"transfers"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "355de2f8-0297-408c-a4a6-55b89a4313b6",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": -78150435,\n    \"player-id\": -2309026,\n    \"team-id-in\": 8082601,\n    \"team-id-out\": -25197325,\n    \"date\": \"1955-11-20T20:39:44.919Z\",\n    \"value\": 3421903.085103169,\n    \"comment\": \"nisi in\",\n    \"type\": \"id sit laborum aliqua\"\n  },\n  {\n    \"id\": -13398089,\n    \"player-id\": 90344005,\n    \"team-id-in\": -27811975,\n    \"team-id-out\": 98787406,\n    \"date\": \"1994-09-13T06:56:15.952Z\",\n    \"value\": -44425500.57919448,\n    \"comment\": \"proident\",\n    \"type\": \"consectetur\"\n  }\n]"
+								},
+								{
+									"id": "2ab74198-4260-4dfb-b8d8-feb2a9baaeb1",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/transfers",
+							"id": "8e4b7cfa-4c93-4c3f-86aa-47de58b9df3b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"transfers"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "7cba6c62-6f08-4663-9640-f1a59bbbea54",
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "[\n  {\n    \"id\": -78150435,\n    \"player-id\": -2309026,\n    \"team-id-in\": 8082601,\n    \"team-id-out\": -25197325,\n    \"date\": \"1955-11-20T20:39:44.919Z\",\n    \"value\": 3421903.085103169,\n    \"comment\": \"nisi in\",\n    \"type\": \"id sit laborum aliqua\"\n  },\n  {\n    \"id\": -13398089,\n    \"player-id\": 90344005,\n    \"team-id-in\": -27811975,\n    \"team-id-out\": 98787406,\n    \"date\": \"1994-09-13T06:56:15.952Z\",\n    \"value\": -44425500.57919448,\n    \"comment\": \"proident\",\n    \"type\": \"consectetur\"\n  }\n]"
+								},
+								{
+									"id": "13b4973a-092a-4f30-943d-ec6d6dc81e31",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/transfers",
+							"id": "d7a449ff-e6e2-4a75-9319-eb0fa0c8956b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"transfers"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "0a1444c8-b421-4bfc-afcb-4361502858fe",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "526ef490-a0b6-4773-8217-ec3ca66708c9",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/transfers",
+							"id": "8bb1e126-4328-4af3-8e5e-da965ff247fc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/transfers?id=10234706",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"transfers"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "10234706"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ddb9ab2b-62df-4db1-9ba7-8031ececfa7e",
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								},
+								{
+									"id": "0de42574-48e2-4e04-8967-4613b311c32c",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers?id=10234706",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "10234706"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/v{{version}}/transfers/:id",
+							"id": "024cefdd-f675-418a-9cc3-50106d84133a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v{{version}}/transfers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v{{version}}",
+										"transfers",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "d4c6e805-a1a5-4247-9510-8c60144999be",
+											"key": "id",
+											"value": "10234706",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c5cf84bb-9ff6-4d81-9c2d-80f580c23442",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": -33563470,\n  \"player-id\": 30234773,\n  \"team-id-in\": -52096397,\n  \"team-id-out\": -57090286,\n  \"date\": \"1988-10-28T17:07:33.799Z\",\n  \"value\": 62361494.303242415,\n  \"comment\": \"consequat exercitation\",\n  \"type\": \"sit cupidatat laborum\"\n}"
+								},
+								{
+									"id": "26053f21-ba36-47b4-9d16-3dd761f56a4a",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v{{version}}/transfers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v{{version}}",
+												"transfers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10234706",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": ""
+								}
+							]
+						}
+					],
+					"id": "a05206c0-90a4-4a09-921d-e17ebf5a8034"
+				}
+			],
+			"id": "f3ee8476-86ab-453a-9566-7ca5661db6f9"
+		}
+	],
+	"variable": [
+		{
+			"id": "39dce311-7baa-420d-9667-16add259c8c2",
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		},
+		{
+			"id": "d461c83e-d392-4396-bf97-cf7d8a0ab29c",
+			"key": "version",
+			"value": "nostrud et ut",
+			"type": "any",
+			"description": "(Required) "
+		}
+	]
+}
