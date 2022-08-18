@@ -30,13 +30,13 @@ O projeto foi estruturado como um MVC. Possui as camadas repositório(M), proces
   v |
 Controller
   | ^
-  | |  Data transfer objects (ex AtividadeEquipagemDto)
+  | |  Dto
   v |
-Processo:IProcesso <--> Mocks de processo
+Process:IProcess
   | ^
-  | |  Entidades (ex AtividadeEquipagemBd)
+  | |  Entities
   v |
-Repositorio:IRepositorio <--> Mocks de repositório
+Repository:IRepository
   | ^
   | |  SQL
   v |
