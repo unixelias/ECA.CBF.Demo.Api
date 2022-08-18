@@ -31,6 +31,10 @@
 														"value": "application/json"
 													}
 												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
 												"url": {
 													"raw": "{{baseUrl}}/api/v{{version}}/tournments/2/matches/8/events/goals",
 													"host": [
@@ -162,13 +166,13 @@
 											],
 											"variable": [
 												{
-													"id": "d401810f-9044-4fe1-ab19-9091ad926e9e",
+													"id": "2e8ead30-3761-4dff-a0af-572655617461",
 													"key": "matchId",
 													"value": "-13147182",
 													"description": "(Required) "
 												},
 												{
-													"id": "f20f316b-68ca-4a7c-93d9-c85963de1c1e",
+													"id": "1c047827-7027-4965-a77e-601bad7563f2",
 													"key": "tournmentId",
 													"value": "enim Ut adipisicing",
 													"description": "(Required) "
@@ -2025,12 +2029,14 @@
 											"variable": [
 												{
 													"key": "tournmentId",
-													"value": "10234706",
+													"value": "2",
+													"type": "string",
 													"description": "(Required) "
 												},
 												{
 													"key": "matchId",
-													"value": "10234706",
+													"value": "8",
+													"type": "string",
 													"description": "(Required) "
 												}
 											]
@@ -2187,12 +2193,14 @@
 											"variable": [
 												{
 													"key": "tournmentId",
-													"value": "10234706",
+													"value": "2",
+													"type": "string",
 													"description": "(Required) "
 												},
 												{
 													"key": "matchId",
-													"value": "10234706",
+													"value": "8",
+													"type": "string",
 													"description": "(Required) "
 												}
 											]
@@ -2357,12 +2365,14 @@
 											"variable": [
 												{
 													"key": "tournmentId",
-													"value": "10234706",
+													"value": "2",
+													"type": "string",
 													"description": "(Required) "
 												},
 												{
 													"key": "matchId",
-													"value": "10234706",
+													"value": "8",
+													"type": "string",
 													"description": "(Required) "
 												}
 											]
@@ -5355,12 +5365,12 @@
 	],
 	"variable": [
 		{
-			"id": "40f1b7e4-2f60-4e8e-a93f-de3cbeaf2c3e",
+			"id": "8e0b5927-5b16-4029-98a1-81e455517ae6",
 			"key": "baseUrl",
 			"value": "https://localhost:7114"
 		},
 		{
-			"id": "593a0072-d55a-4972-9fc4-077ed6dcbd9e",
+			"id": "b42ddb46-d5e1-4b27-95cb-ccdc6b4b5171",
 			"key": "version",
 			"value": "1"
 		}
