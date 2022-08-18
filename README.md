@@ -113,6 +113,11 @@ Ao abrir o projeto, você pode
 ![VisualStudio](./.assets/visual-studio.jpg)
 
 
+## Documentação da API
+
+A documentação da API está disponível via [Postman](https://documenter.getpostman.com/view/8616394/VUqmwKb7) 
+
+
 ## Vídeo demo
 
 [Link para o video de demonstração](https://www.youtube.com/watch?v=6hxCfwUrF0k)
