@@ -6,26 +6,46 @@
   <p align="center">
   Trabalho final apresentado para a disciplina APIs e Web Services (AWS)
   </p>
+    <p align="center">
+  Elias da Cunha Alves (14017088)
+  </p>
 </p>
 
 ________________
 
 <br />
 
-## Índice
-
-1. [Sobre a aplicação](#sobre-a-aplicação)
-    - [Modelo de dados](#modelo-dados)
-    - [Principais tecnologias](#principais-tecnologias)
-    - [Pré Requisitos](#pré-requisitos)
-    - [Como rodar](#como-rodar)
-    - [Rodando com Visual Studio](#como-vs)
-2. [Licença](#licença)
 
 ## Sobre a aplicação
 
 Foi desenvolvida uma API que possibilita o gerenciamento de pequenas ligas de futebol. É possível cadastrar vários Times e seus Jogadores, bem como as transferências realizadas entre times. Também é possível cadastrar campeonatos e programar a execução de partidas entre times. Para as partidas cadastradas é possível lançar cartões (advertências), gols, substituições, bem como início e fim das partidas e do intervalo. Quando buscamos os dados das partidas todos os dados dos eventos referentes a essas partidas são informados.
 
+### Camadas e responsabilidade (MVP)
+O projeto foi estruturado como um MVC. Possui as camadas repositório(M), processo(V) e controller(C). Os processos implementam interfaces IProcesso e os repositórios IRepositorio, para facilitar o desenvolvimento de testes unitários.
+
+```text
+  API
+  | ^
+  | |  HTTP
+  v |
+Controller
+  | ^
+  | |  Data transfer objects (ex AtividadeEquipagemDto)
+  v |
+Processo:IProcesso <--> Mocks de processo
+  | ^
+  | |  Entidades (ex AtividadeEquipagemBd)
+  v |
+Repositorio:IRepositorio <--> Mocks de repositório
+  | ^
+  | |  SQL
+  v |
+Banco de dados
+```
+
+Nos controllers estão definidos os endpoints da API. Um controller usa um ou mais processos.
+Nos processos estão definidas as regras de negócio que utilizam dados de um ou mais repositórios.
+Nos repositórios estão definidas as queries que as preenchem. As queries preenchem entidades, classes que representam no código um dado vindo do banco de dados
 
 ### Modelo de dados
 ![Modelo de dados](./.assets/Modelo_Banco.jpg)
